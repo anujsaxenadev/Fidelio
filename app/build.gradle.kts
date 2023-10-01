@@ -71,6 +71,7 @@ dependencies {
     implementation("androidx.navigation:navigation-compose:2.7.3")
     implementation("com.airbnb.android:lottie-compose:6.1.0")
     implementation("io.github.sridhar-sp:neumorphic:0.0.6")
+    implementation("androidx.compose.material:material-icons-extended:1.6.0-alpha06")
 
 }
 
