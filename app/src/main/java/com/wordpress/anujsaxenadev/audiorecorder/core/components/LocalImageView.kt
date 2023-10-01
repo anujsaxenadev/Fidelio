@@ -4,6 +4,8 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.ColorFilter
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 
@@ -25,6 +27,23 @@ class LocalImageView{
                 contentDescription = description,
                 contentScale = contentScale ?: DefaultContentScale,
                 modifier = modifier ?: DefaultModifier
+            )
+        }
+
+        @Composable
+        fun getLocalImage(
+            imageVector: ImageVector,
+            description: String? = DefaultLocalImageDescription,
+            contentScale: ContentScale? = DefaultContentScale,
+            modifier: Modifier? = null,
+            colorFilter: ColorFilter
+        ) {
+            Image(
+                imageVector = imageVector,
+                contentDescription = description,
+                contentScale = contentScale ?: DefaultContentScale,
+                modifier = modifier ?: DefaultModifier,
+                colorFilter = colorFilter
             )
         }
     }

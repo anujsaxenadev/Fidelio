@@ -12,4 +12,5 @@ val Pink40 = Color(0xFF7D5260)
 
 
 val DSWhite = Color(0xFFFFFFFF)
+val DSPrimary = Color(0xFF6650a4)
 val DSSecondary = Color(0xFFD0BCFF)

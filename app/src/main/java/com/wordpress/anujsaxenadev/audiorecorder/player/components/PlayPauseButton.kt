@@ -13,9 +13,10 @@ import com.wordpress.anujsaxenadev.audiorecorder.core.components.AnimatedImageVi
 import com.wordpress.anujsaxenadev.audiorecorder.core.components.AnimationIteration
 
 @Composable
-fun PlayPauseButton(playButtonInteractionListener: OnPlayButtonInteractionListener) {
+fun PlayPauseButton(
+    playButtonInteractionListener: OnPlayButtonInteractionListener,
+    modifier: Modifier) {
     var buttonState by remember { mutableStateOf(PlayPauseButtonState.OffState.stateValue) }
-    val modifier: Modifier = Modifier.aspectRatio(1f)
 
     when (buttonState) {
         PlayPauseButtonState.OffState.stateValue -> {
@@ -26,7 +27,7 @@ fun PlayPauseButton(playButtonInteractionListener: OnPlayButtonInteractionListen
                 modifier = modifier.clickable {
                     buttonState = PlayPauseButtonState.OnState.stateValue
                     playButtonInteractionListener.onOn()
-                })
+                }.aspectRatio(1f))
         }
 
         PlayPauseButtonState.OnState.stateValue -> {
@@ -35,7 +36,7 @@ fun PlayPauseButton(playButtonInteractionListener: OnPlayButtonInteractionListen
                 modifier = modifier.clickable {
                     buttonState = PlayPauseButtonState.OffState.stateValue
                     playButtonInteractionListener.onOff()
-                })
+                }.aspectRatio(1f))
         }
     }
 }
