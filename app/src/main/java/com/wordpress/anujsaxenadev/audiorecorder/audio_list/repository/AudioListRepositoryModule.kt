@@ -3,7 +3,6 @@ package com.wordpress.anujsaxenadev.audiorecorder.audio_list.repository
 import com.wordpress.anujsaxenadev.audiorecorder.audio_list.repository.impl.AudioListRepository
 import com.wordpress.anujsaxenadev.audiorecorder.audio_list.repository.impl.AudioListRepositoryImpl
 import com.wordpress.anujsaxenadev.audiorecorder.core.file_manager.impl.FileManager
-import com.wordpress.anujsaxenadev.audiorecorder.date.impl.DateManager
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,9 +14,8 @@ class AudioListRepositoryModule {
 
     @Provides
     fun provideAudioListRepository(
-        fileManager: FileManager,
-        dateManager: DateManager
+        fileManager: FileManager
     ): AudioListRepository {
-        return AudioListRepositoryImpl(fileManager, dateManager)
+        return AudioListRepositoryImpl(fileManager)
     }
 }
