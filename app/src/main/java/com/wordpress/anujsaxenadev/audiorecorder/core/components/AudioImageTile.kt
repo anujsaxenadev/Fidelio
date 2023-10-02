@@ -1,4 +1,4 @@
-package com.wordpress.anujsaxenadev.audiorecorder.player.components
+package com.wordpress.anujsaxenadev.audiorecorder.core.components
 
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -10,9 +10,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import com.gandiva.neumorphic.LightSource
 import com.gandiva.neumorphic.neu
-import com.wordpress.anujsaxenadev.audiorecorder.core.components.AnimatedImageView
-import com.wordpress.anujsaxenadev.audiorecorder.core.components.LocalImageView
-import com.wordpress.anujsaxenadev.audiorecorder.ui.theme.DSSecondary
+import com.wordpress.anujsaxenadev.audiorecorder.ui.theme.DSGradientEnd
+import com.wordpress.anujsaxenadev.audiorecorder.ui.theme.DSGradientStart
 import com.wordpress.anujsaxenadev.audiorecorder.ui.theme.DSWhite
 import com.wordpress.anujsaxenadev.audiorecorder.ui.theme.Dimen_10adp
 import com.wordpress.anujsaxenadev.audiorecorder.ui.theme.Dimen_50adp
@@ -20,7 +19,8 @@ import com.wordpress.anujsaxenadev.audiorecorder.ui.theme.Dimen_50adp
 @Composable
 fun AudioImageTile(
     id: Int,
-    audioImageTileType: AudioImageTileType){
+    audioImageTileType: AudioImageTileType
+){
     val roundedRadius = Dimen_10adp
     Card(
         colors = CardDefaults.cardColors(
@@ -29,8 +29,8 @@ fun AudioImageTile(
         modifier = Modifier
             .fillMaxWidth(0.8f)
             .neu(
-                lightShadowColor = DSWhite,
-                darkShadowColor = DSSecondary,
+                lightShadowColor = DSGradientEnd,
+                darkShadowColor = DSGradientStart,
                 shadowElevation = Dimen_50adp,
                 lightSource = LightSource.LEFT_TOP,
             ),
@@ -41,7 +41,7 @@ fun AudioImageTile(
             .clip(RoundedCornerShape(roundedRadius))
         when(audioImageTileType){
             AudioImageTileType.AnimatedImageJSON -> {
-                AnimatedImageView.getAnimatedImage(
+                AnimatedImageView.AnimatedImage(
                     id = id,
                     modifier = modifier)
             }
@@ -52,4 +52,9 @@ fun AudioImageTile(
             }
         }
     }
+}
+
+sealed interface AudioImageTileType{
+    object AnimatedImageJSON: AudioImageTileType
+    object LocalImage: AudioImageTileType
 }

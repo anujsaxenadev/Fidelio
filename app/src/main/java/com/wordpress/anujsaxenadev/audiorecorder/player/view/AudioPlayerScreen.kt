@@ -1,4 +1,4 @@
-package com.wordpress.anujsaxenadev.audiorecorder.record.view
+package com.wordpress.anujsaxenadev.audiorecorder.player.view
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -24,10 +24,10 @@ import com.wordpress.anujsaxenadev.audiorecorder.core.components.AudioImageTile
 import com.wordpress.anujsaxenadev.audiorecorder.core.components.AudioImageTileType
 import com.wordpress.anujsaxenadev.audiorecorder.core.components.LocalImageView
 import com.wordpress.anujsaxenadev.audiorecorder.core.components.play_pause_component.PlayerControls
+import com.wordpress.anujsaxenadev.audiorecorder.core.components.play_pause_component.PlayerControlsListener
 import com.wordpress.anujsaxenadev.audiorecorder.core.components.play_pause_component.PlayerControlsType
-import com.wordpress.anujsaxenadev.audiorecorder.core.components.play_pause_component.RecordControlsListener
 import com.wordpress.anujsaxenadev.audiorecorder.core.navigation.NavigationScreen
-import com.wordpress.anujsaxenadev.audiorecorder.record.viewmodel.AudioRecordingViewModel
+import com.wordpress.anujsaxenadev.audiorecorder.player.viewmodel.AudioPlayerViewModel
 import com.wordpress.anujsaxenadev.audiorecorder.ui.theme.DSGradientEnd
 import com.wordpress.anujsaxenadev.audiorecorder.ui.theme.DSGradientStart
 import com.wordpress.anujsaxenadev.audiorecorder.ui.theme.DSWhite
@@ -37,8 +37,9 @@ import com.wordpress.anujsaxenadev.audiorecorder.ui.theme.Dimen_16adp
 import com.wordpress.anujsaxenadev.audiorecorder.ui.theme.Dimen_70adp
 
 @Composable
-fun AudioRecordingScreen(navController: NavController){
-    val viewModel: AudioRecordingViewModel = hiltViewModel()
+fun AudioPlayerScreen(navController: NavController){
+    val viewModel: AudioPlayerViewModel = hiltViewModel()
+
     Box(modifier = Modifier
         .background(
             brush = Brush.linearGradient(
@@ -73,13 +74,32 @@ fun AudioRecordingScreen(navController: NavController){
             Spacer(modifier = Modifier.height(Dimen_70adp))
             AudioImageTile(R.raw.record_tile_image, AudioImageTileType.AnimatedImageJSON)
             Spacer(modifier = Modifier.height(Dimen_100adp))
-            PlayerControls(PlayerControlsType.Record, recordControlsListener = object : RecordControlsListener {
-                override fun onResume() {
-                    viewModel.startRecording()
+            PlayerControls(
+                PlayerControlsType.Player,
+                duration = 10000,
+                playerControlsListener = object : PlayerControlsListener {
+                override fun onPlay() {
+                    viewModel.start()
                 }
 
                 override fun onPause() {
-                    viewModel.stopRecording()
+                    viewModel.stop()
+                }
+
+                override fun onNext() {
+
+                }
+
+                override fun onPrevious() {
+
+                }
+
+                override fun on10SecReplay() {
+
+                }
+
+                override fun on10SecForward() {
+
                 }
             })
         }

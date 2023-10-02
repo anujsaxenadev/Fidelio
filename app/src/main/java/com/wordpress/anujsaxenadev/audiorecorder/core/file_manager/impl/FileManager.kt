@@ -1,5 +1,6 @@
 package com.wordpress.anujsaxenadev.audiorecorder.core.file_manager.impl
 
+import java.io.File
 import java.io.FileDescriptor
 
 interface FileManager {
@@ -8,4 +9,5 @@ interface FileManager {
     }
     suspend fun getInternalFilesList() : Array<String>
     suspend fun createFileStream(filename: String) : FileDescriptor?
+    suspend fun getFile(filename: String): File?
 }

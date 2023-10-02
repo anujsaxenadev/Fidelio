@@ -35,4 +35,13 @@ class AndroidFileManager(
         }
     }
 
+    override suspend fun getFile(filename: String): File? {
+        return try {
+            File(context.filesDir, filename)
+        } catch (e: Exception){
+            logger.log(LogType.LOGCAT, this.javaClass.name, e)
+            null
+        }
+    }
+
 }

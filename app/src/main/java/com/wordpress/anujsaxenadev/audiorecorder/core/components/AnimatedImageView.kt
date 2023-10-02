@@ -18,23 +18,35 @@ class AnimatedImageView{
         private const val DefaultIsPlaying: Boolean = true
 
         @Composable
-        fun getAnimatedImage(
+        fun AnimatedImage(
             id: Int,
-            contentScale: ContentScale? = DefaultContentScale,
             modifier: Modifier? = DefaultModifier,
+            contentScale: ContentScale? = DefaultContentScale,
             iterations: AnimationIteration? = DefaultAnimationIteration,
-            isPlaying: Boolean? = DefaultIsPlaying
+            isPlaying: Boolean? = DefaultIsPlaying,
+            progress: (() -> Float)? = null
         ) {
             val composition by rememberLottieComposition(LottieCompositionSpec.RawRes(id))
-            LottieAnimation(
-                composition = composition,
-                modifier = modifier ?: DefaultModifier,
-                contentScale = contentScale ?: DefaultContentScale,
-                iterations = getAnimationIterationType(iterations ?: DefaultAnimationIteration),
-                restartOnPlay = false,
-                isPlaying = isPlaying ?: DefaultIsPlaying
-            )
+            if(progress != null){
+                LottieAnimation(
+                    composition = composition,
+                    progress = progress,
+                    modifier = modifier ?: DefaultModifier,
+                    contentScale = contentScale ?: DefaultContentScale
+                )
+            }
+            else {
+                LottieAnimation(
+                    composition = composition,
+                    modifier = modifier ?: DefaultModifier,
+                    contentScale = contentScale ?: DefaultContentScale,
+                    iterations = getAnimationIterationType(iterations ?: DefaultAnimationIteration),
+                    restartOnPlay = false,
+                    isPlaying = isPlaying ?: DefaultIsPlaying
+                )
+            }
         }
+
 
         private fun getAnimationIterationType(iterations: AnimationIteration): Int{
             return when(iterations){
