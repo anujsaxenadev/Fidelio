@@ -8,12 +8,16 @@ import com.wordpress.anujsaxenadev.audiorecorder.audio_list.view.AudioListScreen
 import com.wordpress.anujsaxenadev.audiorecorder.player.view.AudioPlayerScreen
 import com.wordpress.anujsaxenadev.audiorecorder.player.viewmodel.AudioPlayerViewModel
 import com.wordpress.anujsaxenadev.audiorecorder.record.view.AudioRecordingScreen
+import com.wordpress.anujsaxenadev.audiorecorder.splash.view.SplashScreen
 
 @Composable
 fun Navigation (){
     val navController = rememberNavController()
     NavHost(navController = navController, startDestination = NavigationScreen.MainScreen.route) {
         composable(route = NavigationScreen.MainScreen.route){
+            SplashScreen(navController)
+        }
+        composable(route = NavigationScreen.AudioRecordingScreen.route){
             AudioRecordingScreen(navController)
         }
         composable(route = NavigationScreen.AudioPlayerScreen.route + "/{${AudioPlayerViewModel.FILE_NAME_ID}}"){

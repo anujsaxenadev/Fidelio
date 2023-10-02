@@ -16,21 +16,6 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
-
-//    private var audioFile: File? = null
-
-//    private val recorder: AudioRecorder by lazy{
-//        AndroidAudioRecorder(applicationContext)
-//    }
-//
-//    private val player: AudioPlayer by lazy {
-//        AndroidAudioPlayer(applicationContext)
-//    }
-
-//    private val fileManager: FileManager by lazy {
-//        AndroidFileManager(applicationContext)
-//    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         ActivityCompat.requestPermissions(
@@ -45,43 +30,6 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     Navigation()
-
-//                    LazyColumn{
-//                        itemsIndexed(fileManager.getListOfRecordedAudio()){ _, string ->
-//                            Text(text = string)
-//                        }
-//                    }
-//                    Column (
-//                        modifier = Modifier.fillMaxSize(),
-//                        verticalArrangement = Arrangement.Center,
-//                        horizontalAlignment = Alignment.CenterHorizontally){
-//                        Button(onClick = {
-//                            val a = File(filesDir, "audio.mp3").also {
-//                                recorder.start(it)
-//                                audioFile = it
-//                            }
-//                        }) {
-//                            Text(text = "Start Recording")
-//                        }
-//
-//                        Button(onClick = {
-//                            recorder.stop()
-//                        }) {
-//                            Text(text = "Stop Recording")
-//                        }
-//
-//                        Button(onClick = {
-//                            player.playFile(audioFile ?: return@Button)
-//                        }) {
-//                            Text(text = "Play")
-//                        }
-//
-//                        Button(onClick = {
-//                            player.stop()
-//                        }) {
-//                            Text(text = "Play")
-//                        }
-//                    }
                 }
             }
         }
