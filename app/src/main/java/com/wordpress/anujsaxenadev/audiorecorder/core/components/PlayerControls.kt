@@ -1,4 +1,4 @@
-package com.wordpress.anujsaxenadev.audiorecorder.player.components
+package com.wordpress.anujsaxenadev.audiorecorder.core.components
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -17,13 +17,14 @@ import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.role
 import androidx.compose.ui.semantics.semantics
-import com.wordpress.anujsaxenadev.audiorecorder.core.components.LocalImageView
 import com.wordpress.anujsaxenadev.audiorecorder.ui.theme.DSPrimary
 
 @Composable
 fun PlayerControls(
     playerControlsType: PlayerControlsType,
-    listener: PlayerControlsListener){
+    playerControlsListener: PlayerControlsListener? = null,
+    recordControlsListener: RecordControlsListener? = null
+){
     Row(
         modifier = Modifier.fillMaxWidth(),
         verticalAlignment = Alignment.CenterVertically,
@@ -41,7 +42,7 @@ fun PlayerControls(
                 modifier = buttonModifier
                     .weight(playerControlsType.getPreviousButtonWeight())
                     .clickable {
-                        listener.onPrevious()
+                        playerControlsListener?.onPrevious()
                     })
         } else {
             Spacer(
@@ -56,7 +57,7 @@ fun PlayerControls(
                 modifier = buttonModifier
                     .weight(playerControlsType.get10SecReplayButtonWeight())
                     .clickable {
-                        listener.on10SecReplay()
+                        playerControlsListener?.on10SecReplay()
                     })
         } else {
             Spacer(
@@ -66,11 +67,13 @@ fun PlayerControls(
 
         PlayPauseButton(object : OnPlayButtonInteractionListener {
             override fun onOn() {
-                listener.onPlay()
+                playerControlsListener?.onPlay()
+                recordControlsListener?.onPlay()
             }
 
             override fun onOff() {
-                listener.onPause()
+                playerControlsListener?.onPause()
+                recordControlsListener?.onPause()
             }
         }, modifier = buttonModifier.weight(playerControlsType.getPlayButtonWeight()))
 
@@ -81,7 +84,7 @@ fun PlayerControls(
                 modifier = buttonModifier
                     .weight(playerControlsType.get10SecForwardButtonWeight())
                     .clickable {
-                        listener.on10SecForward()
+                        playerControlsListener?.on10SecForward()
                     })
         } else {
             Spacer(
@@ -96,7 +99,7 @@ fun PlayerControls(
                 modifier = buttonModifier
                     .weight(playerControlsType.getNextButtonWeight())
                     .clickable {
-                        listener.onNext()
+                        playerControlsListener?.onNext()
                     })
         } else {
             Spacer(
@@ -124,4 +127,9 @@ interface PlayerControlsListener{
     fun onPrevious()
     fun on10SecReplay()
     fun on10SecForward()
+}
+
+interface RecordControlsListener{
+    fun onPlay()
+    fun onPause()
 }
