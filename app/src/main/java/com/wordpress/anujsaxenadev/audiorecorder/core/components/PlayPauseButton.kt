@@ -1,4 +1,4 @@
-package com.wordpress.anujsaxenadev.audiorecorder.player.components
+package com.wordpress.anujsaxenadev.audiorecorder.core.components
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.aspectRatio
@@ -9,8 +9,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import com.wordpress.anujsaxenadev.audiorecorder.R
-import com.wordpress.anujsaxenadev.audiorecorder.core.components.AnimatedImageView
-import com.wordpress.anujsaxenadev.audiorecorder.core.components.AnimationIteration
 
 @Composable
 fun PlayPauseButton(

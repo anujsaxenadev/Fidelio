@@ -33,10 +33,10 @@ class LocalImageView{
         @Composable
         fun getLocalImage(
             imageVector: ImageVector,
+            colorFilter: ColorFilter,
             description: String? = DefaultLocalImageDescription,
             contentScale: ContentScale? = DefaultContentScale,
-            modifier: Modifier? = null,
-            colorFilter: ColorFilter
+            modifier: Modifier? = null
         ) {
             Image(
                 imageVector = imageVector,
