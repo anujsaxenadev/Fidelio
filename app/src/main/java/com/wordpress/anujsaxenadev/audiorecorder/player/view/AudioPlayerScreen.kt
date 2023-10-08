@@ -3,7 +3,6 @@ package com.wordpress.anujsaxenadev.audiorecorder.player.view
 import androidx.compose.runtime.Composable
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.wordpress.anujsaxenadev.audiorecorder.R
 import com.wordpress.anujsaxenadev.audiorecorder.core.components.GenericAudioPlayerView
 import com.wordpress.anujsaxenadev.audiorecorder.core.components.GenericAudioPlayerViewType
 import com.wordpress.anujsaxenadev.audiorecorder.core.components.play_pause_component.PlayerControls
@@ -16,8 +15,7 @@ fun AudioPlayerScreen(navController: NavController){
     val viewModel: AudioPlayerViewModel = hiltViewModel()
     GenericAudioPlayerView(
         GenericAudioPlayerViewType.AudioPlayer,
-        navController,
-        R.raw.record_tile_image){
+        navController){
         PlayerControls(
             PlayerControlsType.Player,
             duration = 10000,

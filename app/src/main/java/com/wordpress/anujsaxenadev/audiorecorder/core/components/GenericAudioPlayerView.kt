@@ -17,6 +17,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.navigation.NavController
+import com.wordpress.anujsaxenadev.audiorecorder.R
 import com.wordpress.anujsaxenadev.audiorecorder.core.navigation.NavigationScreen
 import com.wordpress.anujsaxenadev.audiorecorder.ui.theme.DSWhite
 import com.wordpress.anujsaxenadev.audiorecorder.ui.theme.Dimen_100adp
@@ -28,7 +29,6 @@ import com.wordpress.anujsaxenadev.audiorecorder.ui.theme.Dimen_70adp
 fun GenericAudioPlayerView(
     audioPlayerViewType: GenericAudioPlayerViewType,
     navController: NavController,
-    musicAnimation: Int,
     playerControls: @Composable (BoxScope.() -> Unit)
 ){
     GradientBackgroundComponent {
@@ -60,7 +60,7 @@ fun GenericAudioPlayerView(
 
             }
             Spacer(modifier = Modifier.height(Dimen_70adp))
-            AudioImageTile(musicAnimation, AudioImageTileType.AnimatedImageJSON)
+            AudioImageTile(R.raw.record_tile_image, AudioImageTileType.AnimatedImageJSON)
             Spacer(modifier = Modifier.height(Dimen_100adp))
             this@GradientBackgroundComponent.playerControls()
         }

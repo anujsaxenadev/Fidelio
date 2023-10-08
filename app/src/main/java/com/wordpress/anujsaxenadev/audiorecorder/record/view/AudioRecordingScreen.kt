@@ -3,7 +3,6 @@ package com.wordpress.anujsaxenadev.audiorecorder.record.view
 import androidx.compose.runtime.Composable
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.wordpress.anujsaxenadev.audiorecorder.R
 import com.wordpress.anujsaxenadev.audiorecorder.core.components.GenericAudioPlayerView
 import com.wordpress.anujsaxenadev.audiorecorder.core.components.GenericAudioPlayerViewType
 import com.wordpress.anujsaxenadev.audiorecorder.core.components.play_pause_component.PlayerControls
@@ -17,8 +16,7 @@ fun AudioRecordingScreen(navController: NavController){
 
     GenericAudioPlayerView(
         GenericAudioPlayerViewType.AudioRecord,
-        navController,
-        R.raw.record_tile_image){
+        navController){
         PlayerControls(PlayerControlsType.Record, recordControlsListener = object : RecordControlsListener {
             override fun onResume() {
                 viewModel.startRecording()
