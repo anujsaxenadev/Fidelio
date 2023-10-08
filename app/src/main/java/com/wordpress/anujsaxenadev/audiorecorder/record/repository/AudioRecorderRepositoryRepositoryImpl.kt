@@ -8,8 +8,11 @@ import com.wordpress.anujsaxenadev.audiorecorder.core.logger.impl.LogType
 import com.wordpress.anujsaxenadev.audiorecorder.core.logger.impl.Logger
 import com.wordpress.anujsaxenadev.audiorecorder.date.impl.DateFormats
 import com.wordpress.anujsaxenadev.audiorecorder.date.impl.DateManager
+import dagger.hilt.android.qualifiers.ApplicationContext
+import javax.inject.Inject
 
-class AudioRecorderRepositoryRepositoryImpl(
+class AudioRecorderRepositoryRepositoryImpl @Inject constructor(
+    @ApplicationContext
     private val context: Context,
     private val dateManager: DateManager,
     private val fileManager: FileManager,
