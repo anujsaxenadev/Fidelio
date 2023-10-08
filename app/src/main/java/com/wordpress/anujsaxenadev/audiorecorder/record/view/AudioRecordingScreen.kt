@@ -1,6 +1,5 @@
 package com.wordpress.anujsaxenadev.audiorecorder.record.view
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -15,21 +14,19 @@ import androidx.compose.material.icons.automirrored.filled.List
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.wordpress.anujsaxenadev.audiorecorder.R
 import com.wordpress.anujsaxenadev.audiorecorder.core.components.AudioImageTile
 import com.wordpress.anujsaxenadev.audiorecorder.core.components.AudioImageTileType
+import com.wordpress.anujsaxenadev.audiorecorder.core.components.GradientBackgroundComponent
 import com.wordpress.anujsaxenadev.audiorecorder.core.components.LocalImageView
 import com.wordpress.anujsaxenadev.audiorecorder.core.components.play_pause_component.PlayerControls
 import com.wordpress.anujsaxenadev.audiorecorder.core.components.play_pause_component.PlayerControlsType
 import com.wordpress.anujsaxenadev.audiorecorder.core.components.play_pause_component.RecordControlsListener
 import com.wordpress.anujsaxenadev.audiorecorder.core.navigation.NavigationScreen
 import com.wordpress.anujsaxenadev.audiorecorder.record.viewmodel.AudioRecordingViewModel
-import com.wordpress.anujsaxenadev.audiorecorder.ui.theme.DSGradientEnd
-import com.wordpress.anujsaxenadev.audiorecorder.ui.theme.DSGradientStart
 import com.wordpress.anujsaxenadev.audiorecorder.ui.theme.DSWhite
 import com.wordpress.anujsaxenadev.audiorecorder.ui.theme.Dimen_100adp
 import com.wordpress.anujsaxenadev.audiorecorder.ui.theme.Dimen_10adp
@@ -39,16 +36,7 @@ import com.wordpress.anujsaxenadev.audiorecorder.ui.theme.Dimen_70adp
 @Composable
 fun AudioRecordingScreen(navController: NavController){
     val viewModel: AudioRecordingViewModel = hiltViewModel()
-    Box(modifier = Modifier
-        .background(
-            brush = Brush.linearGradient(
-                colors = listOf(
-                    DSGradientEnd,
-                    DSGradientStart
-                )
-            )
-        )
-    ){
+    GradientBackgroundComponent{
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Top,
