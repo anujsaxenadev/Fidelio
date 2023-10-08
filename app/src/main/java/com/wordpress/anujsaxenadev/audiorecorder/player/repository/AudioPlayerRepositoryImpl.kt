@@ -6,10 +6,13 @@ import androidx.core.net.toUri
 import com.wordpress.anujsaxenadev.audiorecorder.core.file_manager.impl.FileManager
 import com.wordpress.anujsaxenadev.audiorecorder.core.logger.impl.LogType
 import com.wordpress.anujsaxenadev.audiorecorder.core.logger.impl.Logger
+import dagger.hilt.android.qualifiers.ApplicationContext
 import java.io.File
+import javax.inject.Inject
 
-class AudioPlayerRepositoryImpl(
-    private val context: Context,
+class AudioPlayerRepositoryImpl @Inject constructor(
+    @ApplicationContext
+    private val  context: Context,
     private val fileManager: FileManager,
     private val logger: Logger
 ) : AudioPlayerRepository{

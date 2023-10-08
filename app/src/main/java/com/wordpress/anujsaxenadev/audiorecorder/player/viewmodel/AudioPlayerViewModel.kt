@@ -1,7 +1,9 @@
 package com.wordpress.anujsaxenadev.audiorecorder.player.viewmodel
 
+import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.wordpress.anujsaxenadev.audiorecorder.player.repository.AudioPlayerRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
@@ -29,6 +31,24 @@ class AudioPlayerViewModel @Inject constructor(
         CoroutineScope(Dispatchers.IO).launch {
             repository.stop()
         }
+        viewModelScope.launch {
+            api1()
+        }
+
+        viewModelScope.launch {
+            api2()
+        }
+
     }
+
+
+    suspend fun api1(){
+
+    }
+
+    suspend fun api2(){
+
+    }
+
 
 }
