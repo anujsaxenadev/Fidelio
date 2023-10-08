@@ -1,6 +1,5 @@
 package com.wordpress.anujsaxenadev.audiorecorder.player.viewmodel
 
-import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -23,7 +22,7 @@ class AudioPlayerViewModel @Inject constructor(
 
     fun start(){
         CoroutineScope(Dispatchers.IO).launch {
-            repository.playFile(fileName)
+            repository.play(fileName)
         }
     }
 

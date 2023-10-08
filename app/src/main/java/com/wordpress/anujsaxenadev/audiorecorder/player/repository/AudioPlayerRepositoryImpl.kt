@@ -17,8 +17,9 @@ class AudioPlayerRepositoryImpl @Inject constructor(
     private val logger: Logger
 ) : AudioPlayerRepository{
     private var player: MediaPlayer? = null
+    private var currentFileName: String? = null
 
-    private fun createPlayer(file: File): MediaPlayer?{
+    private fun initMediaPlayer(file: File): MediaPlayer?{
         return try {
             MediaPlayer.create(context, file.toUri())
         } catch (e: Exception){
@@ -27,15 +28,39 @@ class AudioPlayerRepositoryImpl @Inject constructor(
         }
     }
 
-    override suspend fun playFile(fileName: String) {
+    override suspend fun getDuration(): Int{
+        return try {
+            player?.duration ?: 0
+        } catch (e: Exception){
+            logger.log(LogType.LOGCAT, this.javaClass.name, e)
+            0
+        }
+    }
+
+    override suspend fun play(fileName: String) {
         try {
             fileManager.getFile(fileName)?.let {
-                createPlayer(it)?.apply {
-                    player = this
-                    start()
+                if(fileName == this.currentFileName){
+                    player?.start()
+                }
+                else{
+                    initMediaPlayer(it)?.apply {
+                        currentFileName = fileName
+                        player = this
+                        start()
+                    }
                 }
             }
         } catch (e: Exception){
+            logger.log(LogType.LOGCAT, this.javaClass.name, e)
+        }
+    }
+
+    override suspend fun pause(){
+        try {
+            player?.pause()
+        }
+        catch (e: Exception){
             logger.log(LogType.LOGCAT, this.javaClass.name, e)
         }
     }
