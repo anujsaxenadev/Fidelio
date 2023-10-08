@@ -41,8 +41,10 @@ fun PlayPauseButton(
         modifier = modifier
             .clickable {
                 buttonState = if(buttonState == PlayPauseButtonState.OnResume.stateValue || buttonState == PlayPauseButtonState.OnInitCompleted.stateValue){
+                    playButtonInteractionListener.onPause()
                     PlayPauseButtonState.OnPause.stateValue
                 } else {
+                    playButtonInteractionListener.onResume()
                     PlayPauseButtonState.OnResume.stateValue
                 }
             }

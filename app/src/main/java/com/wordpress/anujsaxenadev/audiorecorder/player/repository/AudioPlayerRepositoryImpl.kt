@@ -17,7 +17,6 @@ class AudioPlayerRepositoryImpl @Inject constructor(
     private val logger: Logger
 ) : AudioPlayerRepository{
     private var player: MediaPlayer? = null
-    private var currentFileName: String? = null
 
     private fun initMediaPlayer(file: File): MediaPlayer?{
         return try {
@@ -28,29 +27,32 @@ class AudioPlayerRepositoryImpl @Inject constructor(
         }
     }
 
-    override suspend fun getDuration(): Int{
+    override suspend fun initPlayer(fileName: String): PlayerMetaData?{
         return try {
-            player?.duration ?: 0
+            stop()
+            val file = fileManager.getFile(fileName)
+            if(file != null){
+                val player = initMediaPlayer(file)
+                return if(player != null){
+                    this.player = player
+                    PlayerMetaData(player.duration)
+                }
+                else{
+                    null
+                }
+            }
+            else{
+                return null
+            }
         } catch (e: Exception){
             logger.log(LogType.LOGCAT, this.javaClass.name, e)
-            0
+            null
         }
     }
 
-    override suspend fun play(fileName: String) {
+    override suspend fun play() {
         try {
-            fileManager.getFile(fileName)?.let {
-                if(fileName == this.currentFileName){
-                    player?.start()
-                }
-                else{
-                    initMediaPlayer(it)?.apply {
-                        currentFileName = fileName
-                        player = this
-                        start()
-                    }
-                }
-            }
+            player?.start()
         } catch (e: Exception){
             logger.log(LogType.LOGCAT, this.javaClass.name, e)
         }
@@ -77,3 +79,6 @@ class AudioPlayerRepositoryImpl @Inject constructor(
         }
     }
 }
+
+
+data class PlayerMetaData(val duration: Int)
