@@ -83,4 +83,8 @@ dependencies {
     // Icons
     implementation("androidx.compose.material:material-icons-extended:1.6.0-alpha07")
 
+    // Fonts
+    implementation("androidx.compose.ui:ui-text-google-fonts:1.5.3")
+
+
 }
