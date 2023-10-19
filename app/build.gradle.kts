@@ -81,7 +81,7 @@ dependencies {
     implementation("io.github.sridhar-sp:neumorphic:0.0.6")
 
     // Icons
-    implementation("androidx.compose.material:material-icons-extended:1.6.0-alpha07")
+    implementation("androidx.compose.material:material-icons-extended:1.6.0-alpha08")
 
     // Fonts
     implementation("androidx.compose.ui:ui-text-google-fonts:1.5.3")
