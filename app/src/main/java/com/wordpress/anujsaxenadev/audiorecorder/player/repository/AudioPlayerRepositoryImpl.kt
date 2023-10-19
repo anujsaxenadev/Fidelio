@@ -4,8 +4,7 @@ import android.content.Context
 import android.media.MediaPlayer
 import androidx.core.net.toUri
 import com.wordpress.anujsaxenadev.file_manager.impl.FileManager
-import com.wordpress.anujsaxenadev.logger.impl.LogType
-import com.wordpress.anujsaxenadev.logger.impl.Logger
+import com.wordpress.anujsaxenadev.logger.Logger
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.io.File
 import javax.inject.Inject
@@ -15,14 +14,15 @@ class AudioPlayerRepositoryImpl @Inject constructor(
     private val  context: Context,
     private val fileManager: FileManager,
     private val logger: Logger
-) : AudioPlayerRepository{
+) : AudioPlayerRepository,
+    Logger by logger{
     private var player: MediaPlayer? = null
 
     private fun initMediaPlayer(file: File): MediaPlayer?{
         return try {
             MediaPlayer.create(context, file.toUri())
         } catch (e: Exception){
-            logger.log(LogType.LOGCAT, this.javaClass.name, e)
+            e logThisExceptionWithTag javaClass.name
             null
         }
     }
@@ -45,7 +45,7 @@ class AudioPlayerRepositoryImpl @Inject constructor(
                 return null
             }
         } catch (e: Exception){
-            logger.log(LogType.LOGCAT, this.javaClass.name, e)
+            e logThisExceptionWithTag javaClass.name
             null
         }
     }
@@ -54,7 +54,7 @@ class AudioPlayerRepositoryImpl @Inject constructor(
         try {
             player?.start()
         } catch (e: Exception){
-            logger.log(LogType.LOGCAT, this.javaClass.name, e)
+            e logThisExceptionWithTag javaClass.name
         }
     }
 
@@ -63,7 +63,7 @@ class AudioPlayerRepositoryImpl @Inject constructor(
             player?.pause()
         }
         catch (e: Exception){
-            logger.log(LogType.LOGCAT, this.javaClass.name, e)
+            e logThisExceptionWithTag javaClass.name
         }
     }
 
@@ -75,7 +75,7 @@ class AudioPlayerRepositoryImpl @Inject constructor(
             }
             player = null
         } catch (e: Exception){
-            logger.log(LogType.LOGCAT, this.javaClass.name, e)
+            e logThisExceptionWithTag javaClass.name
         }
     }
 }

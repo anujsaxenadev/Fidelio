@@ -6,8 +6,7 @@ import android.os.Build
 import com.wordpress.anujsaxenadev.date.impl.DateFormats
 import com.wordpress.anujsaxenadev.date.impl.DateManager
 import com.wordpress.anujsaxenadev.file_manager.impl.FileManager
-import com.wordpress.anujsaxenadev.logger.impl.LogType
-import com.wordpress.anujsaxenadev.logger.impl.Logger
+import com.wordpress.anujsaxenadev.logger.Logger
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 
@@ -17,7 +16,8 @@ class AudioRecorderRepositoryRepositoryImpl @Inject constructor(
     private val dateManager: DateManager,
     private val fileManager: FileManager,
     private val logger: Logger
-) : AudioRecorderRepository{
+) : AudioRecorderRepository,
+    Logger by logger{
 
     companion object{
         private const val AUDIO_FORMAT: String = ".mp4"
@@ -33,7 +33,7 @@ class AudioRecorderRepositoryRepositoryImpl @Inject constructor(
                 MediaRecorder()
             }
         } catch (e: Exception){
-            logger.log(LogType.LOGCAT, javaClass.name, e)
+            e logThisExceptionWithTag javaClass.name
             null
         }
     }
@@ -62,7 +62,7 @@ class AudioRecorderRepositoryRepositoryImpl @Inject constructor(
             }
         }
         catch (e: Exception){
-            logger.log(LogType.LOGCAT, javaClass.name, e)
+            e logThisExceptionWithTag javaClass.name
         }
     }
 
@@ -75,7 +75,7 @@ class AudioRecorderRepositoryRepositoryImpl @Inject constructor(
             recorder = null
         }
         catch (e: Exception){
-            logger.log(LogType.LOGCAT, javaClass.name, e)
+            e logThisExceptionWithTag javaClass.name
         }
     }
 }

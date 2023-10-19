@@ -1,8 +1,7 @@
 package com.wordpress.anujsaxenadev.file_manager.impl
 
 import android.content.Context
-import com.wordpress.anujsaxenadev.logger.impl.LogType
-import com.wordpress.anujsaxenadev.logger.impl.Logger
+import com.wordpress.anujsaxenadev.logger.Logger
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.File
@@ -12,13 +11,13 @@ import java.io.FileOutputStream
 class AndroidFileManager(
     private val context: Context,
     private val logger: Logger
-) : FileManager {
-
+) : FileManager,
+    Logger by logger {
     override suspend fun getInternalFilesList() : Array<String>{
         return try {
             context.fileList()
         } catch (e: Exception){
-            logger.log(LogType.LOGCAT, this.javaClass.name, e)
+            e logThisExceptionWithTag javaClass.name
             arrayOf()
         }
     }
@@ -31,7 +30,7 @@ class AndroidFileManager(
                 ).fd
             }
         } catch (e: Exception){
-            logger.log(LogType.LOGCAT, this.javaClass.name, e)
+            e logThisExceptionWithTag javaClass.name
             null
         }
     }
@@ -40,7 +39,7 @@ class AndroidFileManager(
         return try {
             File(context.filesDir, filename)
         } catch (e: Exception){
-            logger.log(LogType.LOGCAT, this.javaClass.name, e)
+            e logThisExceptionWithTag javaClass.name
             null
         }
     }
