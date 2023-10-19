@@ -1,7 +1,7 @@
-package com.wordpress.anujsaxenadev.audiorecorder.date
+package com.wordpress.anujsaxenadev.date
 
-import com.wordpress.anujsaxenadev.audiorecorder.date.impl.DateManager
-import com.wordpress.anujsaxenadev.audiorecorder.date.impl.DateManagerImpl
+import com.wordpress.anujsaxenadev.date.impl.DateManager
+import com.wordpress.anujsaxenadev.date.impl.DateManagerImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

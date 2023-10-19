@@ -1,4 +1,4 @@
-package com.wordpress.anujsaxenadev.audiorecorder.date.impl
+package com.wordpress.anujsaxenadev.date.impl
 
 import com.wordpress.anujsaxenadev.logger.impl.LogType
 import com.wordpress.anujsaxenadev.logger.impl.Logger
