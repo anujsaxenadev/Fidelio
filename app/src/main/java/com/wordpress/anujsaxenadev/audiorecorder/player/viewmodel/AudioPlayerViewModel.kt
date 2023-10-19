@@ -2,11 +2,10 @@ package com.wordpress.anujsaxenadev.audiorecorder.player.viewmodel
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.wordpress.anujsaxenadev.audiorecorder.player.repository.AudioPlayerRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
@@ -30,26 +29,26 @@ class AudioPlayerViewModel @Inject constructor(
     }
 
     private fun getDuration(){
-        CoroutineScope(Dispatchers.IO).launch {
+        viewModelScope.launch(Dispatchers.IO) {
             val metaData = repository.initPlayer(fileName)
             _durationFlow.value = metaData?.duration ?: 0
         }
     }
 
     fun start(){
-        CoroutineScope(Dispatchers.IO).launch {
+        viewModelScope.launch(Dispatchers.IO) {
             repository.play()
         }
     }
 
     private fun stop(){
-        CoroutineScope(Dispatchers.IO).launch {
+        viewModelScope.launch(Dispatchers.IO) {
             repository.stop()
         }
     }
 
     fun pause(){
-        CoroutineScope(Dispatchers.IO).launch {
+        viewModelScope.launch(Dispatchers.IO) {
             repository.pause()
         }
     }

@@ -1,10 +1,10 @@
 package com.wordpress.anujsaxenadev.audiorecorder.audio_list.view_model
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.wordpress.anujsaxenadev.audiorecorder.audio_list.models.AudioFile
 import com.wordpress.anujsaxenadev.audiorecorder.audio_list.repository.impl.AudioListRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -21,7 +21,7 @@ class AudioListViewModel @Inject constructor(private val repository: AudioListRe
     }
 
     private fun getAudioList() {
-        CoroutineScope(Dispatchers.IO).launch {
+        viewModelScope.launch(Dispatchers.IO) {
             _audioListFlow.value = repository.getAudioList()
         }
     }
