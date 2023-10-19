@@ -16,3 +16,4 @@ dependencyResolutionManagement {
 rootProject.name = "Fidelio"
 include(":app")
 include(":app:logger")
+include(":app:file_manager")

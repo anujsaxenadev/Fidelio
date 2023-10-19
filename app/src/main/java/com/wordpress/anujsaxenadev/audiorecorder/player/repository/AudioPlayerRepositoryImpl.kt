@@ -3,7 +3,7 @@ package com.wordpress.anujsaxenadev.audiorecorder.player.repository
 import android.content.Context
 import android.media.MediaPlayer
 import androidx.core.net.toUri
-import com.wordpress.anujsaxenadev.audiorecorder.core.file_manager.impl.FileManager
+import com.wordpress.anujsaxenadev.file_manager.impl.FileManager
 import com.wordpress.anujsaxenadev.logger.impl.LogType
 import com.wordpress.anujsaxenadev.logger.impl.Logger
 import dagger.hilt.android.qualifiers.ApplicationContext

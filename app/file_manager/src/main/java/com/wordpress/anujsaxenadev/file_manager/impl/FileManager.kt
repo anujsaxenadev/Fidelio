@@ -1,4 +1,4 @@
-package com.wordpress.anujsaxenadev.audiorecorder.core.file_manager.impl
+package com.wordpress.anujsaxenadev.file_manager.impl
 
 import java.io.File
 import java.io.FileDescriptor

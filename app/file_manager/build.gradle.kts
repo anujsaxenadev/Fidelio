@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.wordpress.anujsaxenadev.logger"
+    namespace = "com.wordpress.anujsaxenadev.file_manager"
     compileSdk = 34
 
     defaultConfig {
@@ -38,4 +38,7 @@ dependencies {
     // Hilt
     implementation("com.google.dagger:hilt-android:2.48")
     ksp("com.google.dagger:hilt-compiler:2.48")
+
+    // Logger
+    implementation(project(":app:logger"))
 }
