@@ -1,9 +1,9 @@
 package com.wordpress.anujsaxenadev.audiorecorder.record.viewmodel
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.wordpress.anujsaxenadev.audiorecorder.record.repository.AudioRecorderRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -12,13 +12,13 @@ import javax.inject.Inject
 class AudioRecordingViewModel @Inject constructor(private val repository: AudioRecorderRepository) : ViewModel(){
 
     fun startRecording(){
-        CoroutineScope(Dispatchers.IO).launch {
+        viewModelScope.launch(Dispatchers.IO) {
             repository.start()
         }
     }
 
     fun stopRecording(){
-        CoroutineScope(Dispatchers.IO).launch {
+        viewModelScope.launch(Dispatchers.IO) {
             repository.stop()
         }
     }
