@@ -2,14 +2,15 @@ package com.wordpress.anujsaxenadev.audiorecorder.audio_list.repository.impl
 
 import com.wordpress.anujsaxenadev.audiorecorder.audio_list.models.AudioFile
 import com.wordpress.anujsaxenadev.audiorecorder.core.file_manager.impl.FileManager
-import com.wordpress.anujsaxenadev.audiorecorder.core.logger.impl.LogType
-import com.wordpress.anujsaxenadev.audiorecorder.core.logger.impl.Logger
+import com.wordpress.anujsaxenadev.logger.impl.LogType
+import com.wordpress.anujsaxenadev.logger.impl.Logger
 import javax.inject.Inject
 
 
 class AudioListRepositoryImpl @Inject constructor(
     private val fileManager: FileManager,
-    private val logger: Logger) : AudioListRepository {
+    private val logger: Logger
+) : AudioListRepository {
 
     override suspend fun getAudioList(): ArrayList<AudioFile> {
         return try {

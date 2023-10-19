@@ -1,7 +1,7 @@
 package com.wordpress.anujsaxenadev.audiorecorder.date.impl
 
-import com.wordpress.anujsaxenadev.audiorecorder.core.logger.impl.LogType
-import com.wordpress.anujsaxenadev.audiorecorder.core.logger.impl.Logger
+import com.wordpress.anujsaxenadev.logger.impl.LogType
+import com.wordpress.anujsaxenadev.logger.impl.Logger
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale

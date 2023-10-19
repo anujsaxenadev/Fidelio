@@ -1,4 +1,4 @@
-package com.wordpress.anujsaxenadev.audiorecorder.core.logger.impl
+package com.wordpress.anujsaxenadev.logger.impl
 
 import java.lang.Exception
 

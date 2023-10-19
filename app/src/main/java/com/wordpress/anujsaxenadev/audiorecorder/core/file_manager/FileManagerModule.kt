@@ -3,7 +3,7 @@ package com.wordpress.anujsaxenadev.audiorecorder.core.file_manager
 import android.content.Context
 import com.wordpress.anujsaxenadev.audiorecorder.core.file_manager.impl.AndroidFileManager
 import com.wordpress.anujsaxenadev.audiorecorder.core.file_manager.impl.FileManager
-import com.wordpress.anujsaxenadev.audiorecorder.core.logger.impl.Logger
+import com.wordpress.anujsaxenadev.logger.impl.Logger
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

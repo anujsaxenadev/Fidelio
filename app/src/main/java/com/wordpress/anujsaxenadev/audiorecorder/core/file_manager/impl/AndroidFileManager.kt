@@ -1,8 +1,8 @@
 package com.wordpress.anujsaxenadev.audiorecorder.core.file_manager.impl
 
 import android.content.Context
-import com.wordpress.anujsaxenadev.audiorecorder.core.logger.impl.LogType
-import com.wordpress.anujsaxenadev.audiorecorder.core.logger.impl.Logger
+import com.wordpress.anujsaxenadev.logger.impl.LogType
+import com.wordpress.anujsaxenadev.logger.impl.Logger
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.File
@@ -11,7 +11,8 @@ import java.io.FileOutputStream
 
 class AndroidFileManager(
     private val context: Context,
-    private val logger: Logger) : FileManager {
+    private val logger: Logger
+) : FileManager {
 
     override suspend fun getInternalFilesList() : Array<String>{
         return try {

@@ -1,7 +1,7 @@
-package com.wordpress.anujsaxenadev.audiorecorder.core.logger
+package com.wordpress.anujsaxenadev.logger
 
-import com.wordpress.anujsaxenadev.audiorecorder.core.logger.impl.Logger
-import com.wordpress.anujsaxenadev.audiorecorder.core.logger.impl.LoggerImpl
+import com.wordpress.anujsaxenadev.logger.impl.Logger
+import com.wordpress.anujsaxenadev.logger.impl.LoggerImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
