@@ -7,6 +7,7 @@ import com.wordpress.anujsaxenadev.date.impl.DateFormats
 import com.wordpress.anujsaxenadev.date.impl.DateManager
 import com.wordpress.anujsaxenadev.file_manager.impl.FileManager
 import com.wordpress.anujsaxenadev.logger.Logger
+import com.wordpress.anujsaxenadev.logger.helpers.tag
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 
@@ -33,7 +34,7 @@ class AudioRecorderRepositoryRepositoryImpl @Inject constructor(
                 MediaRecorder()
             }
         } catch (e: Exception){
-            e logThisExceptionWithTag javaClass.simpleName
+            e logThisExceptionWithTag tag
             null
         }
     }
@@ -62,7 +63,7 @@ class AudioRecorderRepositoryRepositoryImpl @Inject constructor(
             }
         }
         catch (e: Exception){
-            e logThisExceptionWithTag javaClass.simpleName
+            e logThisExceptionWithTag tag
         }
     }
 
@@ -75,7 +76,7 @@ class AudioRecorderRepositoryRepositoryImpl @Inject constructor(
             recorder = null
         }
         catch (e: Exception){
-            e logThisExceptionWithTag javaClass.simpleName
+            e logThisExceptionWithTag tag
         }
     }
 }

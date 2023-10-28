@@ -5,6 +5,7 @@ import android.media.MediaPlayer
 import androidx.core.net.toUri
 import com.wordpress.anujsaxenadev.file_manager.impl.FileManager
 import com.wordpress.anujsaxenadev.logger.Logger
+import com.wordpress.anujsaxenadev.logger.helpers.tag
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.io.File
 import javax.inject.Inject
@@ -22,7 +23,7 @@ class AudioPlayerRepositoryImpl @Inject constructor(
         return try {
             MediaPlayer.create(context, file.toUri())
         } catch (e: Exception){
-            e logThisExceptionWithTag javaClass.simpleName
+            e logThisExceptionWithTag tag
             null
         }
     }
@@ -45,7 +46,7 @@ class AudioPlayerRepositoryImpl @Inject constructor(
                 return null
             }
         } catch (e: Exception){
-            e logThisExceptionWithTag javaClass.simpleName
+            e logThisExceptionWithTag tag
             null
         }
     }
@@ -54,7 +55,7 @@ class AudioPlayerRepositoryImpl @Inject constructor(
         try {
             player?.start()
         } catch (e: Exception){
-            e logThisExceptionWithTag javaClass.simpleName
+            e logThisExceptionWithTag tag
         }
     }
 
@@ -63,7 +64,7 @@ class AudioPlayerRepositoryImpl @Inject constructor(
             player?.pause()
         }
         catch (e: Exception){
-            e logThisExceptionWithTag javaClass.simpleName
+            e logThisExceptionWithTag tag
         }
     }
 
@@ -75,7 +76,7 @@ class AudioPlayerRepositoryImpl @Inject constructor(
             }
             player = null
         } catch (e: Exception){
-            e logThisExceptionWithTag javaClass.simpleName
+            e logThisExceptionWithTag tag
         }
     }
 }

@@ -1,6 +1,7 @@
 package com.wordpress.anujsaxenadev.date.impl
 
 import com.wordpress.anujsaxenadev.logger.Logger
+import com.wordpress.anujsaxenadev.logger.helpers.tag
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -15,7 +16,7 @@ class DateManagerImpl @Inject constructor(
             val sdf = SimpleDateFormat(format, Locale.getDefault())
             sdf.format(Date())
         } catch (e: Exception){
-            e logThisExceptionWithTag javaClass.simpleName
+            e logThisExceptionWithTag tag
             null
         }
     }

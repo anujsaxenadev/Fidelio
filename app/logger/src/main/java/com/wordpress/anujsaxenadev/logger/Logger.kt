@@ -1,7 +1,8 @@
 package com.wordpress.anujsaxenadev.logger
 
 /**
- * Interface for logging Exceptions or Messages. See `LogcatLogger` for implementations.
+ * Interface for logging Exceptions or Messages.
+ * See `LogcatLogger` for implementations.
  */
 interface Logger {
 

@@ -2,6 +2,7 @@ package com.wordpress.anujsaxenadev.file_manager.impl
 
 import android.content.Context
 import com.wordpress.anujsaxenadev.logger.Logger
+import com.wordpress.anujsaxenadev.logger.helpers.tag
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.File
@@ -17,7 +18,7 @@ class AndroidFileManager(
         return try {
             context.fileList()
         } catch (e: Exception){
-            e logThisExceptionWithTag javaClass.simpleName
+            e logThisExceptionWithTag tag
             arrayOf()
         }
     }
@@ -30,7 +31,7 @@ class AndroidFileManager(
                 ).fd
             }
         } catch (e: Exception){
-            e logThisExceptionWithTag javaClass.simpleName
+            e logThisExceptionWithTag tag
             null
         }
     }
@@ -39,7 +40,7 @@ class AndroidFileManager(
         return try {
             File(context.filesDir, filename)
         } catch (e: Exception){
-            e logThisExceptionWithTag javaClass.simpleName
+            e logThisExceptionWithTag tag
             null
         }
     }
