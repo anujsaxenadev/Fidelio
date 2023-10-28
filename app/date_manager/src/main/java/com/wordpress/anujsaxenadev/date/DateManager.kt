@@ -2,7 +2,7 @@ package com.wordpress.anujsaxenadev.date
 
 /**
  * Interface for Handling Date And Time Processing
- * See `DateManagerImpl` for implementations.
+ * @see `DateManagerImpl` for implementations.
  */
 interface DateManager{
 

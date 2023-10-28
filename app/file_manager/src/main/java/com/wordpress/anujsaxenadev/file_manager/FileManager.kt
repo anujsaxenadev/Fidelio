@@ -4,7 +4,8 @@ import java.io.File
 import java.io.FileDescriptor
 
 /**
- * Interface for Handing Files in System. See `AndroidFileManager` for implementations.
+ * Interface for Handing Files in System.
+ * @see `AndroidFileManager` for implementations.
  */
 interface FileManager {
     /**

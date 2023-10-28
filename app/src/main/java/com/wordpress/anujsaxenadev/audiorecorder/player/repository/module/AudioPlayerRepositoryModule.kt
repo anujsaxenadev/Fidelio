@@ -1,5 +1,7 @@
-package com.wordpress.anujsaxenadev.audiorecorder.player.repository
+package com.wordpress.anujsaxenadev.audiorecorder.player.repository.module
 
+import com.wordpress.anujsaxenadev.audiorecorder.player.repository.AudioPlayerRepository
+import com.wordpress.anujsaxenadev.audiorecorder.player.repository.impl.AudioPlayerRepositoryImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

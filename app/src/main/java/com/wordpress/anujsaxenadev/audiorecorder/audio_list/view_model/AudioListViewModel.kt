@@ -3,7 +3,7 @@ package com.wordpress.anujsaxenadev.audiorecorder.audio_list.view_model
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.wordpress.anujsaxenadev.audiorecorder.audio_list.models.AudioFile
-import com.wordpress.anujsaxenadev.audiorecorder.audio_list.repository.impl.AudioListRepository
+import com.wordpress.anujsaxenadev.audiorecorder.audio_list.repository.AudioListRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow

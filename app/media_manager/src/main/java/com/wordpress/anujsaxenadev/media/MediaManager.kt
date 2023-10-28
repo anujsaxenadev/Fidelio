@@ -4,7 +4,7 @@ import java.io.File
 
 /**
  * Interface for Managing the Media, like playing, pausing, etc.
- * See `MediaManagerImpl` for implementations.
+ * @see `MediaManagerImpl` for implementations.
  */
 interface MediaManager {
 
