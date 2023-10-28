@@ -87,6 +87,7 @@ dependencies {
     implementation(project(":app:file_manager"))
     implementation(project(":app:date_manager"))
     implementation(project(":app:media_manager"))
+    implementation(project(":app:audio_recorder"))
 
 
 }

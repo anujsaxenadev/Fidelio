@@ -18,7 +18,6 @@ class MediaManagerImpl @Inject constructor(
     private var player: MediaPlayer? = null
 
     override suspend fun initManager(file: File){
-        file.name logThisMessageWithTag tag
         player = try {
             if(player != null){
                 stop()
