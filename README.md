@@ -2,12 +2,19 @@
 Audio Recorder and Player in Jetpack Compose Material 3 with Neumorphic Design.
 
 ## Record Screen
-![Record Screen](https://raw.githubusercontent.com/anujsaxenadev/Fidelio/master/samples/record_scren.png "Record Screen" | width=100)
-![Record Screen](https://raw.githubusercontent.com/anujsaxenadev/Fidelio/master/samples/record_screen.png "Record Screen" | width=100)
+<div align="center">
+  <img src="https://raw.githubusercontent.com/anujsaxenadev/Fidelio/master/samples/record_screen.png" width=30% />
+  <img src="https://raw.githubusercontent.com/anujsaxenadev/Fidelio/master/samples/record_scren.png" width=30% />
+<div/>
+
 
 ## Recordings Screen
-![Recordings Screen](https://raw.githubusercontent.com/anujsaxenadev/Fidelio/master/samples/recordings_list.png "Recordings Screen")
+<div align="center">
+  <img src="https://raw.githubusercontent.com/anujsaxenadev/Fidelio/master/samples/recordings_list.png" width=30% />
+<div/>
 
 ## Player Screen
-![Player Screen](https://raw.githubusercontent.com/anujsaxenadev/Fidelio/master/samples/player.png "Player Screen")
-![Player Screen](https://raw.githubusercontent.com/anujsaxenadev/Fidelio/master/samples/player_running.png "Player Screen")
+<div align="center">
+  <img src="https://raw.githubusercontent.com/anujsaxenadev/Fidelio/master/samples/player.png" width=30% />
+  <img src="https://raw.githubusercontent.com/anujsaxenadev/Fidelio/master/samples/player_running.png" width=30% />
+<div/>
