@@ -1,7 +1,7 @@
 package com.wordpress.anujsaxenadev.logger.module
 
 import com.wordpress.anujsaxenadev.logger.Logger
-import com.wordpress.anujsaxenadev.logger.impl.LoggerImpl
+import com.wordpress.anujsaxenadev.logger.impl.LogcatLogger
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -13,5 +13,5 @@ import javax.inject.Singleton
 abstract class LoggerModule {
     @Singleton
     @Binds
-    abstract fun bindsLogger(loggerImpl: LoggerImpl): Logger
+    abstract fun bindsLogger(logcatLogger: LogcatLogger): Logger
 }

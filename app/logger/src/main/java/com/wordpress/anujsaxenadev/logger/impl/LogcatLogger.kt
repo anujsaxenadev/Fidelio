@@ -5,9 +5,12 @@ import com.wordpress.anujsaxenadev.logger.Logger
 import javax.inject.Inject
 
 /**
- * Implementation of [Logger] Class for different types of Logging Input
+ * An implementation of `Logger` just writes different types of Logging Input events to logcat.
+ * Used in builds where no logs events should be sent to a backend.
  */
-class LoggerImpl @Inject constructor() : Logger {
+class LogcatLogger @Inject constructor() : Logger {
+    private val tag = javaClass.simpleName
+
     override infix fun Throwable.logThisExceptionWithTag(tag:String){
         log(LogType.Exception(tag, this))
     }
@@ -24,10 +27,10 @@ class LoggerImpl @Inject constructor() : Logger {
     private fun log(logType: LogType) {
         when(logType){
             is LogType.Exception -> {
-                Log.e(logType.tag, logType.e.toString())
+                Log.d(logType.tag, logType.e.toString())
             }
             is LogType.Message -> {
-                Log.e(logType.tag, logType.message)
+                Log.d(logType.tag, logType.message)
             }
         }
     }

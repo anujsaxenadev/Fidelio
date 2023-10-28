@@ -22,7 +22,7 @@ class AudioPlayerRepositoryImpl @Inject constructor(
         return try {
             MediaPlayer.create(context, file.toUri())
         } catch (e: Exception){
-            e logThisExceptionWithTag javaClass.name
+            e logThisExceptionWithTag javaClass.simpleName
             null
         }
     }
@@ -45,7 +45,7 @@ class AudioPlayerRepositoryImpl @Inject constructor(
                 return null
             }
         } catch (e: Exception){
-            e logThisExceptionWithTag javaClass.name
+            e logThisExceptionWithTag javaClass.simpleName
             null
         }
     }
@@ -54,7 +54,7 @@ class AudioPlayerRepositoryImpl @Inject constructor(
         try {
             player?.start()
         } catch (e: Exception){
-            e logThisExceptionWithTag javaClass.name
+            e logThisExceptionWithTag javaClass.simpleName
         }
     }
 
@@ -63,7 +63,7 @@ class AudioPlayerRepositoryImpl @Inject constructor(
             player?.pause()
         }
         catch (e: Exception){
-            e logThisExceptionWithTag javaClass.name
+            e logThisExceptionWithTag javaClass.simpleName
         }
     }
 
@@ -75,7 +75,7 @@ class AudioPlayerRepositoryImpl @Inject constructor(
             }
             player = null
         } catch (e: Exception){
-            e logThisExceptionWithTag javaClass.name
+            e logThisExceptionWithTag javaClass.simpleName
         }
     }
 }

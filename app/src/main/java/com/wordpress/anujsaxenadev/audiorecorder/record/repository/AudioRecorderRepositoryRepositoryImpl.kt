@@ -33,7 +33,7 @@ class AudioRecorderRepositoryRepositoryImpl @Inject constructor(
                 MediaRecorder()
             }
         } catch (e: Exception){
-            e logThisExceptionWithTag javaClass.name
+            e logThisExceptionWithTag javaClass.simpleName
             null
         }
     }
@@ -62,7 +62,7 @@ class AudioRecorderRepositoryRepositoryImpl @Inject constructor(
             }
         }
         catch (e: Exception){
-            e logThisExceptionWithTag javaClass.name
+            e logThisExceptionWithTag javaClass.simpleName
         }
     }
 
@@ -75,7 +75,7 @@ class AudioRecorderRepositoryRepositoryImpl @Inject constructor(
             recorder = null
         }
         catch (e: Exception){
-            e logThisExceptionWithTag javaClass.name
+            e logThisExceptionWithTag javaClass.simpleName
         }
     }
 }

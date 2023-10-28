@@ -23,7 +23,7 @@ class AudioListRepositoryImpl @Inject constructor(
             }
             audioList
         } catch (e: Exception){
-            e logThisExceptionWithTag javaClass.name
+            e logThisExceptionWithTag javaClass.simpleName
             ArrayList()
         }
     }
