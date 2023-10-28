@@ -85,7 +85,7 @@ dependencies {
 
     implementation(project(":app:logger"))
     implementation(project(":app:file_manager"))
-    implementation(project(":app:date"))
+    implementation(project(":app:date_manager"))
     implementation(project(":app:media_manager"))
 
 

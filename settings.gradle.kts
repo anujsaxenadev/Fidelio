@@ -17,5 +17,5 @@ rootProject.name = "Fidelio"
 include(":app")
 include(":app:logger")
 include(":app:file_manager")
-include(":app:date")
+include(":app:date_manager")
 include(":app:media_manager")
