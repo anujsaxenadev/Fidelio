@@ -62,6 +62,7 @@ class AudioRecorderImpl @Inject constructor(
                 reset()
             }
             recorder = null
+            fileManager.releaseResources()
         }
         catch (e: Exception){
             e logThisExceptionWithTag tag

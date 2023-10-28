@@ -19,6 +19,7 @@ class AndroidFileManager @Inject constructor(
     private val logger: Logger
 ) : FileManager,
     Logger by logger {
+    private var fileStream: FileOutputStream? = null
     override suspend fun getInternalFilesList() : Array<String>{
         return try {
             context.fileList()
@@ -31,9 +32,10 @@ class AndroidFileManager @Inject constructor(
     override suspend fun createInternalFileStream(filename: String): FileDescriptor? {
         return try {
             withContext(Dispatchers.IO) {
-                FileOutputStream(
+                fileStream = FileOutputStream(
                     File(context.filesDir, filename)
-                ).fd
+                )
+                fileStream?.fd
             }
         } catch (e: Exception){
             e logThisExceptionWithTag tag
@@ -47,6 +49,17 @@ class AndroidFileManager @Inject constructor(
         } catch (e: Exception){
             e logThisExceptionWithTag tag
             null
+        }
+    }
+
+    override suspend fun releaseResources(){
+        try {
+            withContext(Dispatchers.IO) {
+                fileStream?.close()
+            }
+        }
+        catch (e: Exception){
+            e logThisExceptionWithTag tag
         }
     }
 

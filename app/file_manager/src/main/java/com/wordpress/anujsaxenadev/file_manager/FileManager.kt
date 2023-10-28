@@ -32,4 +32,10 @@ interface FileManager {
      * @return [File] reference of the file or `null` if not able to get the file.
      */
     suspend fun getInternalFile(filename: String): File?
+
+    /**
+     * Releasing the Resources that has been captured by Manager. like - File Streams, etc.
+     * Must call this after the file execution is done.
+     */
+    suspend fun releaseResources()
 }
