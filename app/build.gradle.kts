@@ -62,12 +62,9 @@ dependencies {
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
-    debugImplementation("androidx.compose.ui:ui-tooling")
-    debugImplementation("androidx.compose.ui:ui-test-manifest")
-
 
     // Hilt
-    implementation("com.google.dagger:hilt-android:2.48")
+    implementation("com.google.dagger:hilt-android:2.48.1")
     ksp("com.google.dagger:hilt-compiler:2.48")
     implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
 
@@ -84,7 +81,7 @@ dependencies {
     implementation("androidx.compose.material:material-icons-extended:1.6.0-alpha08")
 
     // Fonts
-    implementation("androidx.compose.ui:ui-text-google-fonts:1.5.3")
+    implementation("androidx.compose.ui:ui-text-google-fonts:1.5.4")
 
     implementation(project(":app:logger"))
     implementation(project(":app:file_manager"))
