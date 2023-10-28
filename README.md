@@ -1,6 +1,21 @@
-# Fidelio - Audio Recorder and Player
+<h1 align="center">Fidelio - Audio Recorder and Player</h1><br>
 
-Welcome to the Fidelio repository! Fidelio is an open-source Audio Recorder and Player designed for common use. This README provides a comprehensive guide to understanding and using Fidelio effectively.
+<p align="center">
+:eyeglasses: Fidelio is an open-source Audio Recorder and Player designed for common use. This README provides a comprehensive guide to understanding and using Fidelio effectively.
+</p><br>
+
+<p align="center">
+  <img alt="Static Badge" src="https://img.shields.io/badge/OS-Android-lightgreen?style=for-the-badge&logo=android&logoColor=lightgreen">
+  <img alt="Static Badge" src="https://img.shields.io/badge/Language-Kotlin-1DA1F2?style=for-the-badge&logo=kotlin&logoColor=lightgreen">
+  <img alt="Static Badge" src="https://img.shields.io/badge/UI-Jetpack%20Compose-blue?style=for-the-badge&logo=jetpackcompose&logoColor=lightgreen&color=white">
+  <img alt="Static Badge" src="https://img.shields.io/badge/Min%20API%20Level-24-lightgreen?style=for-the-badge&logo=androidstudio&logoColor=lightgreen">
+</p>
+
+<p align="center">
+  <img alt="Static Badge" src="https://img.shields.io/badge/License-MIT-1DA1F2?style=for-the-badge&logo=readme&logoColor=1DA1F2">
+  <img alt="Static Badge" src="https://img.shields.io/badge/Version%20Control-Git-f18e33?style=for-the-badge&logo=github&logoColor=white">
+  <img alt="Static Badge" src="https://img.shields.io/badge/Contribution-Welcome-lightgreen?style=for-the-badge&logo=githubactions&logoColor=lightgreen">
+</p>
 
 ## Table of Contents
 - [Learnings](#learnings)
