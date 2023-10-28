@@ -3,7 +3,7 @@ package com.wordpress.anujsaxenadev.audiorecorder.player.repository
 import android.content.Context
 import android.media.MediaPlayer
 import androidx.core.net.toUri
-import com.wordpress.anujsaxenadev.file_manager.impl.FileManager
+import com.wordpress.anujsaxenadev.file_manager.FileManager
 import com.wordpress.anujsaxenadev.logger.Logger
 import com.wordpress.anujsaxenadev.logger.helpers.tag
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -31,7 +31,7 @@ class AudioPlayerRepositoryImpl @Inject constructor(
     override suspend fun initPlayer(fileName: String): PlayerMetaData?{
         return try {
             stop()
-            val file = fileManager.getFile(fileName)
+            val file = fileManager.getInternalFile(fileName)
             if(file != null){
                 val player = initMediaPlayer(file)
                 return if(player != null){

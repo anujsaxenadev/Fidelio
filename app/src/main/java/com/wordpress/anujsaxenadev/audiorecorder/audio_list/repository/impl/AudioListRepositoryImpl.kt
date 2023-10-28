@@ -1,7 +1,7 @@
 package com.wordpress.anujsaxenadev.audiorecorder.audio_list.repository.impl
 
 import com.wordpress.anujsaxenadev.audiorecorder.audio_list.models.AudioFile
-import com.wordpress.anujsaxenadev.file_manager.impl.FileManager
+import com.wordpress.anujsaxenadev.file_manager.FileManager
 import com.wordpress.anujsaxenadev.logger.Logger
 import com.wordpress.anujsaxenadev.logger.helpers.tag
 import javax.inject.Inject

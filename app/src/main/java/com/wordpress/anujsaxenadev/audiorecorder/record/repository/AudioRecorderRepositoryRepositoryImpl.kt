@@ -5,7 +5,7 @@ import android.media.MediaRecorder
 import android.os.Build
 import com.wordpress.anujsaxenadev.date.impl.DateFormats
 import com.wordpress.anujsaxenadev.date.impl.DateManager
-import com.wordpress.anujsaxenadev.file_manager.impl.FileManager
+import com.wordpress.anujsaxenadev.file_manager.FileManager
 import com.wordpress.anujsaxenadev.logger.Logger
 import com.wordpress.anujsaxenadev.logger.helpers.tag
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -54,7 +54,7 @@ class AudioRecorderRepositoryRepositoryImpl @Inject constructor(
                     setAudioSource(MediaRecorder.AudioSource.MIC)
                     setOutputFormat(MediaRecorder.OutputFormat.MPEG_4)
                     setAudioEncoder(MediaRecorder.AudioEncoder.AAC)
-                    setOutputFile(fileManager.createFileStream(it))
+                    setOutputFile(fileManager.createInternalFileStream(it))
 
                     prepare()
                     start()
