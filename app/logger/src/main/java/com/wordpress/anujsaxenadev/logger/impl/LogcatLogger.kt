@@ -3,13 +3,14 @@ package com.wordpress.anujsaxenadev.logger.impl
 import android.util.Log
 import com.wordpress.anujsaxenadev.logger.Logger
 import javax.inject.Inject
+import javax.inject.Singleton
 
 /**
  * An implementation of `Logger` just writes different types of Logging Input events to logcat.
  * Used in builds where no logs events should be sent to a backend.
  */
+@Singleton
 class LogcatLogger @Inject constructor() : Logger {
-    private val tag = javaClass.simpleName
 
     override infix fun Throwable.logThisExceptionWithTag(tag:String){
         log(LogType.Exception(tag, this))
