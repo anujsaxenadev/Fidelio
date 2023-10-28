@@ -18,27 +18,12 @@
 </p>
 
 ## Table of Contents
-- [Learnings](#learnings)
 - [Features](#features)
 - [Contributing](#contributing)
 - [License](#license)
 - [Status](#status)
 - [Roadmap](#roadmap)
 - [Design](#design)
-
-## Learnings
-- Hilt
-- Kotlin Flows
-- Coroutines
-- Jetpack Compose
-- MVVM
-- Lottie
-- View Binding
-- Material 3
-- Solid Principles
-- Neumorphic Design
-- MultiModule Design
-- Google Fonts
 
 ## Features
 
