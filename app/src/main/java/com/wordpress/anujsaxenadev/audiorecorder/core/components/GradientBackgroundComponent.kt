@@ -10,7 +10,7 @@ import com.wordpress.anujsaxenadev.audiorecorder.ui.theme.DSGradientEnd
 import com.wordpress.anujsaxenadev.audiorecorder.ui.theme.DSGradientStart
 
 @Composable
-fun GradientBackgroundComponent(content: @Composable (BoxScope.() -> Unit)) {
+inline fun GradientBackgroundComponent(content: @Composable (BoxScope.() -> Unit)) {
     Box(modifier = Modifier
         .background(
             brush = Brush.linearGradient(

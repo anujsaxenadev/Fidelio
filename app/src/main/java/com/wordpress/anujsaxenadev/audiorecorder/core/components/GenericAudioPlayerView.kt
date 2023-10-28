@@ -26,7 +26,7 @@ import com.wordpress.anujsaxenadev.audiorecorder.ui.theme.Dimen_16adp
 import com.wordpress.anujsaxenadev.audiorecorder.ui.theme.Dimen_70adp
 
 @Composable
-fun GenericAudioPlayerView(
+inline fun GenericAudioPlayerView(
     audioPlayerViewType: GenericAudioPlayerViewType,
     navController: NavController,
     playerControls: @Composable (BoxScope.() -> Unit)

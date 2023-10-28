@@ -19,10 +19,10 @@ import androidx.compose.ui.graphics.drawscope.rotate
 import com.wordpress.anujsaxenadev.audiorecorder.ui.theme.Dimen_4adp
 
 @Composable
-fun AnimatedBorderCard(
+inline fun AnimatedBorderCard(
     modifier: Modifier,
     shape: RoundedCornerShape,
-    content: @Composable () -> Unit
+    crossinline content: @Composable () -> Unit
 ){
     val duration = 10000
     val infiniteTransition = rememberInfiniteTransition("AnimatedBorderCardAnimation")
