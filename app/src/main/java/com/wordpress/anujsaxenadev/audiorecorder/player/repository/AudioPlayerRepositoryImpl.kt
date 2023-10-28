@@ -1,83 +1,35 @@
 package com.wordpress.anujsaxenadev.audiorecorder.player.repository
 
-import android.content.Context
-import android.media.MediaPlayer
-import androidx.core.net.toUri
 import com.wordpress.anujsaxenadev.file_manager.FileManager
-import com.wordpress.anujsaxenadev.logger.Logger
-import com.wordpress.anujsaxenadev.logger.helpers.tag
-import dagger.hilt.android.qualifiers.ApplicationContext
-import java.io.File
+import com.wordpress.anujsaxenadev.media.MediaManager
 import javax.inject.Inject
 
 class AudioPlayerRepositoryImpl @Inject constructor(
-    @ApplicationContext
-    private val  context: Context,
     private val fileManager: FileManager,
-    private val logger: Logger
-) : AudioPlayerRepository,
-    Logger by logger{
-    private var player: MediaPlayer? = null
+    private val mediaManager: MediaManager
+) : AudioPlayerRepository{
 
-    private fun initMediaPlayer(file: File): MediaPlayer?{
-        return try {
-            MediaPlayer.create(context, file.toUri())
-        } catch (e: Exception){
-            e logThisExceptionWithTag tag
-            null
+    override suspend fun initPlayer(fileName: String): PlayerMetaData{
+        val file = fileManager.getInternalFile(fileName)
+        return if(file != null){
+            mediaManager.initManager(file)
+            PlayerMetaData(mediaManager.getDuration())
         }
-    }
-
-    override suspend fun initPlayer(fileName: String): PlayerMetaData?{
-        return try {
-            stop()
-            val file = fileManager.getInternalFile(fileName)
-            if(file != null){
-                val player = initMediaPlayer(file)
-                return if(player != null){
-                    this.player = player
-                    PlayerMetaData(player.duration)
-                }
-                else{
-                    null
-                }
-            }
-            else{
-                return null
-            }
-        } catch (e: Exception){
-            e logThisExceptionWithTag tag
-            null
+        else{
+            PlayerMetaData(0)
         }
     }
 
     override suspend fun play() {
-        try {
-            player?.start()
-        } catch (e: Exception){
-            e logThisExceptionWithTag tag
-        }
+        mediaManager.play()
     }
 
     override suspend fun pause(){
-        try {
-            player?.pause()
-        }
-        catch (e: Exception){
-            e logThisExceptionWithTag tag
-        }
+        mediaManager.pause()
     }
 
     override suspend fun stop() {
-        try {
-            player?.apply {
-                stop()
-                release()
-            }
-            player = null
-        } catch (e: Exception){
-            e logThisExceptionWithTag tag
-        }
+        mediaManager.stop()
     }
 }
 

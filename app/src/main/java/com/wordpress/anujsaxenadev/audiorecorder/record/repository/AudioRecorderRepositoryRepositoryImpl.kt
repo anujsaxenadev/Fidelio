@@ -3,8 +3,9 @@ package com.wordpress.anujsaxenadev.audiorecorder.record.repository
 import android.content.Context
 import android.media.MediaRecorder
 import android.os.Build
-import com.wordpress.anujsaxenadev.date.impl.DateFormats
+import com.wordpress.anujsaxenadev.audiorecorder.core.constants.ApplicationConstants
 import com.wordpress.anujsaxenadev.date.DateManager
+import com.wordpress.anujsaxenadev.date.impl.DateFormats
 import com.wordpress.anujsaxenadev.file_manager.FileManager
 import com.wordpress.anujsaxenadev.logger.Logger
 import com.wordpress.anujsaxenadev.logger.helpers.tag
@@ -41,7 +42,7 @@ class AudioRecorderRepositoryRepositoryImpl @Inject constructor(
 
     private suspend fun suggestAudioFileName() : String?{
         return try{
-            FileManager.AUDIO_FILE_PREFIX + dateManager.getTodayInFormat(DateFormats.DDMMMYYHHMMSS.format) + AUDIO_FORMAT
+            ApplicationConstants.AUDIO_FILE_PREFIX + dateManager.getTodayInFormat(DateFormats.DDMMMYYHHMMSS.format) + AUDIO_FORMAT
         } catch (e: Exception){
             null
         }

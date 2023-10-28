@@ -31,7 +31,7 @@ class AudioPlayerViewModel @Inject constructor(
     private fun getDuration(){
         viewModelScope.launch(Dispatchers.IO) {
             val metaData = repository.initPlayer(fileName)
-            _durationFlow.value = metaData?.duration ?: 0
+            _durationFlow.value = metaData.duration
         }
     }
 

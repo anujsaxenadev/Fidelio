@@ -7,10 +7,6 @@ import java.io.FileDescriptor
  * Interface for Handing Files in System. See `AndroidFileManager` for implementations.
  */
 interface FileManager {
-    companion object{
-        const val AUDIO_FILE_PREFIX: String = "AUDIO-REC-"
-    }
-
     /**
      * Get the Internal Files List From the System. No Permissions are required for Internal Storage of the App.
      *

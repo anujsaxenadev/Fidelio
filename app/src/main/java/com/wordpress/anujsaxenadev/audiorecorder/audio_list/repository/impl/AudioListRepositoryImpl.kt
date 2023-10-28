@@ -1,6 +1,7 @@
 package com.wordpress.anujsaxenadev.audiorecorder.audio_list.repository.impl
 
 import com.wordpress.anujsaxenadev.audiorecorder.audio_list.models.AudioFile
+import com.wordpress.anujsaxenadev.audiorecorder.core.constants.ApplicationConstants
 import com.wordpress.anujsaxenadev.file_manager.FileManager
 import com.wordpress.anujsaxenadev.logger.Logger
 import com.wordpress.anujsaxenadev.logger.helpers.tag
@@ -18,7 +19,7 @@ class AudioListRepositoryImpl @Inject constructor(
             val list = fileManager.getInternalFilesList()
             val audioList = ArrayList<AudioFile>()
             list.forEach{
-                if(it.startsWith(FileManager.AUDIO_FILE_PREFIX)){
+                if(it.startsWith(ApplicationConstants.AUDIO_FILE_PREFIX)){
                     audioList.add(AudioFile(it))
                 }
             }
