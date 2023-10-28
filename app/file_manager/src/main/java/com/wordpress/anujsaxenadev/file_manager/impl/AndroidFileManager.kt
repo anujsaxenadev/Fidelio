@@ -17,7 +17,7 @@ class AndroidFileManager(
         return try {
             context.fileList()
         } catch (e: Exception){
-            e logThisExceptionWithTag javaClass.name
+            e logThisExceptionWithTag javaClass.simpleName
             arrayOf()
         }
     }
@@ -30,7 +30,7 @@ class AndroidFileManager(
                 ).fd
             }
         } catch (e: Exception){
-            e logThisExceptionWithTag javaClass.name
+            e logThisExceptionWithTag javaClass.simpleName
             null
         }
     }
@@ -39,7 +39,7 @@ class AndroidFileManager(
         return try {
             File(context.filesDir, filename)
         } catch (e: Exception){
-            e logThisExceptionWithTag javaClass.name
+            e logThisExceptionWithTag javaClass.simpleName
             null
         }
     }

@@ -15,7 +15,7 @@ class DateManagerImpl @Inject constructor(
             val sdf = SimpleDateFormat(format, Locale.getDefault())
             sdf.format(Date())
         } catch (e: Exception){
-            e logThisExceptionWithTag javaClass.name
+            e logThisExceptionWithTag javaClass.simpleName
             null
         }
     }
