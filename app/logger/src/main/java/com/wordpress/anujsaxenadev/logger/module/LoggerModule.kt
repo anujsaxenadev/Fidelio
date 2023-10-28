@@ -1,6 +1,7 @@
-package com.wordpress.anujsaxenadev.logger.impl
+package com.wordpress.anujsaxenadev.logger.module
 
 import com.wordpress.anujsaxenadev.logger.Logger
+import com.wordpress.anujsaxenadev.logger.impl.LoggerImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
