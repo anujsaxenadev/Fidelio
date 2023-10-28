@@ -28,7 +28,7 @@ class LogcatLogger @Inject constructor() : Logger {
     private fun log(logType: LogType) {
         when(logType){
             is LogType.Exception -> {
-                Log.d(logType.tag, logType.e.toString())
+                Log.d(logType.tag, logType.e.message, logType.e)
             }
             is LogType.Message -> {
                 Log.d(logType.tag, logType.message)
