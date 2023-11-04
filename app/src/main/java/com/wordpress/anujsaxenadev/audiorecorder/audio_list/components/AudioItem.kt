@@ -22,8 +22,9 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.wordpress.anujsaxenadev.audiorecorder.R
 import com.wordpress.anujsaxenadev.audiorecorder.audio_list.models.AudioFile
-import com.wordpress.anujsaxenadev.audiorecorder.core.components.LocalImageView
 import com.wordpress.anujsaxenadev.audiorecorder.core.navigation.NavigationScreen
+import com.wordpress.anujsaxenadev.ui.components.DSImage
+import com.wordpress.anujsaxenadev.ui.components.ImageType
 import com.wordpress.anujsaxenadev.ui.theme.DSGrey
 import com.wordpress.anujsaxenadev.ui.theme.DSWhite
 import com.wordpress.anujsaxenadev.ui.theme.Dimen_24adp
@@ -32,6 +33,7 @@ import com.wordpress.anujsaxenadev.ui.theme.Dimen_50adp
 
 @Composable
 fun AudioItem (navController: NavController, audio: AudioFile){
+
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -40,20 +42,19 @@ fun AudioItem (navController: NavController, audio: AudioFile){
                 navController.navigate(NavigationScreen.AudioPlayerScreen.route + "/${audio.fileName}")
             }
     ) {
+        
         Row(
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceBetween,
             modifier = Modifier.fillMaxWidth()) {
 
             Box(modifier = Modifier.weight(2f)) {
-                LocalImageView.getLocalImage(
-                    id = R.mipmap.audio_icon,
+                DSImage(ImageType.Resource(R.mipmap.audio_icon,
                     modifier = Modifier
                         .height(
                             Dimen_50adp
                         )
-                        .aspectRatio(1f)
-                )
+                        .aspectRatio(1f)))
             }
 
             Column(
@@ -73,15 +74,13 @@ fun AudioItem (navController: NavController, audio: AudioFile){
             }
 
             Box(modifier = Modifier.weight(1f)) {
-                LocalImageView.getLocalImage(
-                    imageVector = Icons.Filled.PlayArrow,
-                    colorFilter = ColorFilter.tint(DSWhite),
+                DSImage(ImageType.Vector(Icons.Filled.PlayArrow,
                     modifier = Modifier
                         .height(
                             Dimen_24adp
                         )
-                        .aspectRatio(1f)
-                )
+                        .aspectRatio(1f),
+                    colorFilter = ColorFilter.tint(DSWhite)))
             }
         }
     }

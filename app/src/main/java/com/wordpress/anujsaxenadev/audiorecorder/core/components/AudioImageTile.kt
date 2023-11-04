@@ -11,6 +11,8 @@ import androidx.compose.ui.draw.clip
 import com.gandiva.neumorphic.LightSource
 import com.gandiva.neumorphic.neu
 import com.wordpress.anujsaxenadev.audiorecorder.audio_list.components.AnimatedBorderCard
+import com.wordpress.anujsaxenadev.ui.components.DSImage
+import com.wordpress.anujsaxenadev.ui.components.ImageType
 import com.wordpress.anujsaxenadev.ui.theme.DSGradientEnd
 import com.wordpress.anujsaxenadev.ui.theme.DSGradientStart
 import com.wordpress.anujsaxenadev.ui.theme.DSWhite
@@ -50,9 +52,12 @@ fun AudioImageTile(
                         modifier = modifier)
                 }
                 AudioImageTileType.LocalImage -> {
-                    LocalImageView.getLocalImage(
-                        id,
-                        modifier = modifier)
+                    DSImage(
+                        ImageType.Resource(
+                            id,
+                            modifier = modifier
+                        )
+                    )
                 }
             }
         }

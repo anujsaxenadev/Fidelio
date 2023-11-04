@@ -7,7 +7,8 @@ import androidx.compose.material.icons.filled.Forward10
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ColorFilter
-import com.wordpress.anujsaxenadev.audiorecorder.core.components.LocalImageView
+import com.wordpress.anujsaxenadev.ui.components.DSImage
+import com.wordpress.anujsaxenadev.ui.components.ImageType
 import com.wordpress.anujsaxenadev.ui.theme.DSWhite
 
 @Composable
@@ -16,13 +17,16 @@ fun Forward10Button(
     modifier: Modifier,
     playerControlsListener: PlayerControlsListener?) {
     if (playerControlsType == PlayerControlsType.Player) {
-        LocalImageView.getLocalImage(
-            imageVector = Icons.Filled.Forward10,
-            colorFilter = ColorFilter.tint(DSWhite),
-            modifier = modifier
-                .clickable {
-                    playerControlsListener?.on10SecForward()
-                })
+        DSImage(
+            ImageType.Vector(
+                Icons.Filled.Forward10,
+                modifier = modifier
+                    .clickable {
+                        playerControlsListener?.on10SecForward()
+                    },
+                colorFilter = ColorFilter.tint(DSWhite)
+            )
+        )
     } else {
         Spacer(
             modifier = modifier

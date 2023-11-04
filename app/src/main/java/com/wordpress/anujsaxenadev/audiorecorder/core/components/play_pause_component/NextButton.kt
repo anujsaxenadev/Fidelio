@@ -7,7 +7,8 @@ import androidx.compose.material.icons.filled.SkipNext
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ColorFilter
-import com.wordpress.anujsaxenadev.audiorecorder.core.components.LocalImageView
+import com.wordpress.anujsaxenadev.ui.components.DSImage
+import com.wordpress.anujsaxenadev.ui.components.ImageType
 import com.wordpress.anujsaxenadev.ui.theme.DSWhite
 
 @Composable
@@ -16,13 +17,16 @@ fun NextButton(
     modifier: Modifier,
     playerControlsListener: PlayerControlsListener?){
     if(playerControlsType == PlayerControlsType.Player) {
-        LocalImageView.getLocalImage(
-            imageVector = Icons.Filled.SkipNext,
-            colorFilter = ColorFilter.tint(DSWhite),
-            modifier = modifier
-                .clickable {
-                    playerControlsListener?.onNext()
-                })
+        DSImage(
+            ImageType.Vector(
+                Icons.Filled.SkipNext,
+                modifier = modifier
+                    .clickable {
+                        playerControlsListener?.onNext()
+                    },
+                colorFilter = ColorFilter.tint(DSWhite)
+            )
+        )
     } else {
         Spacer(
             modifier = modifier)

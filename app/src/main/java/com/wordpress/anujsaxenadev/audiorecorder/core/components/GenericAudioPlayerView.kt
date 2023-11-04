@@ -19,6 +19,8 @@ import androidx.compose.ui.graphics.ColorFilter
 import androidx.navigation.NavController
 import com.wordpress.anujsaxenadev.audiorecorder.R
 import com.wordpress.anujsaxenadev.audiorecorder.core.navigation.NavigationScreen
+import com.wordpress.anujsaxenadev.ui.components.DSImage
+import com.wordpress.anujsaxenadev.ui.components.ImageType
 import com.wordpress.anujsaxenadev.ui.theme.DSWhite
 import com.wordpress.anujsaxenadev.ui.theme.Dimen_100adp
 import com.wordpress.anujsaxenadev.ui.theme.Dimen_10adp
@@ -46,14 +48,16 @@ inline fun GenericAudioPlayerView(
                 when(audioPlayerViewType){
                     GenericAudioPlayerViewType.AudioPlayer -> {}
                     GenericAudioPlayerViewType.AudioRecord -> {
-                        LocalImageView.getLocalImage(
-                            imageVector = Icons.AutoMirrored.Filled.List,
-                            colorFilter = ColorFilter.tint(DSWhite),
-                            modifier = Modifier
-                                .padding(Dimen_10adp)
-                                .clickable {
-                                    navController.navigate(NavigationScreen.AudioListScreen.route)
-                                }
+                        DSImage(
+                            ImageType.Vector(
+                                Icons.AutoMirrored.Filled.List,
+                                modifier = Modifier
+                                    .padding(Dimen_10adp)
+                                    .clickable {
+                                        navController.navigate(NavigationScreen.AudioListScreen.route)
+                                    },
+                                colorFilter = ColorFilter.tint(DSWhite)
+                            )
                         )
                     }
                 }
