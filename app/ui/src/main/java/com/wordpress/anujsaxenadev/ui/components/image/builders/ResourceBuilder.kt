@@ -6,9 +6,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import com.wordpress.anujsaxenadev.ui.components.image.ImageType
 
-class ResourceBuilder {
+class ResourceBuilder : ImageBuilder<ImageType.Resource> {
     @Composable
-    fun build(imageType: ImageType.Resource){
+    override fun build(imageType: ImageType.Resource) {
         Image(
             modifier = imageType.modifier ?: Modifier,
             painter = painterResource(id = imageType.resourceId),

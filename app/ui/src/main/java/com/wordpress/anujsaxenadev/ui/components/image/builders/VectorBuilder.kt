@@ -5,9 +5,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.wordpress.anujsaxenadev.ui.components.image.ImageType
 
-class VectorBuilder {
+class VectorBuilder: ImageBuilder<ImageType.Vector> {
     @Composable
-    fun build(imageType: ImageType.Vector){
+    override fun build(imageType: ImageType.Vector){
         Image(
             modifier = imageType.modifier ?: Modifier,
             imageVector = imageType.imageVector,
