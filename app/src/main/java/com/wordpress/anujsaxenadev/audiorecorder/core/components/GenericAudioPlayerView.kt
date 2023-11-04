@@ -19,11 +19,11 @@ import androidx.compose.ui.graphics.ColorFilter
 import androidx.navigation.NavController
 import com.wordpress.anujsaxenadev.audiorecorder.R
 import com.wordpress.anujsaxenadev.audiorecorder.core.navigation.NavigationScreen
-import com.wordpress.anujsaxenadev.audiorecorder.ui.theme.DSWhite
-import com.wordpress.anujsaxenadev.audiorecorder.ui.theme.Dimen_100adp
-import com.wordpress.anujsaxenadev.audiorecorder.ui.theme.Dimen_10adp
-import com.wordpress.anujsaxenadev.audiorecorder.ui.theme.Dimen_16adp
-import com.wordpress.anujsaxenadev.audiorecorder.ui.theme.Dimen_70adp
+import com.wordpress.anujsaxenadev.ui.theme.DSWhite
+import com.wordpress.anujsaxenadev.ui.theme.Dimen_100adp
+import com.wordpress.anujsaxenadev.ui.theme.Dimen_10adp
+import com.wordpress.anujsaxenadev.ui.theme.Dimen_16adp
+import com.wordpress.anujsaxenadev.ui.theme.Dimen_70adp
 
 @Composable
 inline fun GenericAudioPlayerView(

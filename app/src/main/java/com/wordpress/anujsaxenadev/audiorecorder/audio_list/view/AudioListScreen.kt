@@ -11,7 +11,7 @@ import com.wordpress.anujsaxenadev.audiorecorder.audio_list.components.AudioItem
 import com.wordpress.anujsaxenadev.audiorecorder.audio_list.components.AudioListHeader
 import com.wordpress.anujsaxenadev.audiorecorder.audio_list.view_model.AudioListViewModel
 import com.wordpress.anujsaxenadev.audiorecorder.core.components.GradientBackgroundComponent
-import com.wordpress.anujsaxenadev.audiorecorder.ui.theme.Dimen_10adp
+import com.wordpress.anujsaxenadev.ui.theme.Dimen_10adp
 
 @Composable
 fun AudioListScreen(

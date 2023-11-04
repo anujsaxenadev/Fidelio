@@ -16,7 +16,7 @@ import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.rotate
-import com.wordpress.anujsaxenadev.audiorecorder.ui.theme.Dimen_4adp
+import com.wordpress.anujsaxenadev.ui.theme.Dimen_4adp
 
 @Composable
 inline fun AnimatedBorderCard(

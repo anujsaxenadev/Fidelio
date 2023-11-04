@@ -17,6 +17,7 @@
             <option value="$PROJECT_DIR$/app/file_manager" />
             <option value="$PROJECT_DIR$/app/logger" />
             <option value="$PROJECT_DIR$/app/media_manager" />
+            <option value="$PROJECT_DIR$/app/ui" />
           </set>
         </option>
       </GradleProjectSettings>

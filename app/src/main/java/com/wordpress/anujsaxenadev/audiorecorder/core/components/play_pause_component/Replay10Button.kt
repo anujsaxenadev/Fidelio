@@ -8,7 +8,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ColorFilter
 import com.wordpress.anujsaxenadev.audiorecorder.core.components.LocalImageView
-import com.wordpress.anujsaxenadev.audiorecorder.ui.theme.DSWhite
+import com.wordpress.anujsaxenadev.ui.theme.DSWhite
 
 @Composable
 fun Replay10Button(

@@ -4,7 +4,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.wordpress.anujsaxenadev.audiorecorder.ui.theme.Dimen_100adp
+import com.wordpress.anujsaxenadev.ui.theme.Dimen_100adp
 
 @Composable
 fun AudioListHeader() {

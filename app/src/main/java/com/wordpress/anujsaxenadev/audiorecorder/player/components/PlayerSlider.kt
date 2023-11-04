@@ -10,7 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import com.wordpress.anujsaxenadev.audiorecorder.ui.theme.DSPrimary
+import com.wordpress.anujsaxenadev.ui.theme.DSPrimary
 
 @Composable
 fun PlayerSlider() {

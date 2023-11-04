@@ -1,4 +1,4 @@
-package com.wordpress.anujsaxenadev.audiorecorder.ui.theme
+package com.wordpress.anujsaxenadev.ui.theme
 
 import androidx.compose.ui.unit.dp
 

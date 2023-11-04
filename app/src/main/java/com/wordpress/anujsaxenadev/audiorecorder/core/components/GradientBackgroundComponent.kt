@@ -6,8 +6,8 @@ import androidx.compose.foundation.layout.BoxScope
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
-import com.wordpress.anujsaxenadev.audiorecorder.ui.theme.DSGradientEnd
-import com.wordpress.anujsaxenadev.audiorecorder.ui.theme.DSGradientStart
+import com.wordpress.anujsaxenadev.ui.theme.DSGradientEnd
+import com.wordpress.anujsaxenadev.ui.theme.DSGradientStart
 
 @Composable
 inline fun GradientBackgroundComponent(content: @Composable (BoxScope.() -> Unit)) {

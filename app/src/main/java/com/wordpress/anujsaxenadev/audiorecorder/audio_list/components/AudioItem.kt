@@ -24,11 +24,11 @@ import com.wordpress.anujsaxenadev.audiorecorder.R
 import com.wordpress.anujsaxenadev.audiorecorder.audio_list.models.AudioFile
 import com.wordpress.anujsaxenadev.audiorecorder.core.components.LocalImageView
 import com.wordpress.anujsaxenadev.audiorecorder.core.navigation.NavigationScreen
-import com.wordpress.anujsaxenadev.audiorecorder.ui.theme.DSGrey
-import com.wordpress.anujsaxenadev.audiorecorder.ui.theme.DSWhite
-import com.wordpress.anujsaxenadev.audiorecorder.ui.theme.Dimen_24adp
-import com.wordpress.anujsaxenadev.audiorecorder.ui.theme.Dimen_4adp
-import com.wordpress.anujsaxenadev.audiorecorder.ui.theme.Dimen_50adp
+import com.wordpress.anujsaxenadev.ui.theme.DSGrey
+import com.wordpress.anujsaxenadev.ui.theme.DSWhite
+import com.wordpress.anujsaxenadev.ui.theme.Dimen_24adp
+import com.wordpress.anujsaxenadev.ui.theme.Dimen_4adp
+import com.wordpress.anujsaxenadev.ui.theme.Dimen_50adp
 
 @Composable
 fun AudioItem (navController: NavController, audio: AudioFile){
