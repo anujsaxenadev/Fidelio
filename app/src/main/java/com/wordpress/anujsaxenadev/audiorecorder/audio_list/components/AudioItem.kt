@@ -23,8 +23,8 @@ import androidx.navigation.NavController
 import com.wordpress.anujsaxenadev.audiorecorder.R
 import com.wordpress.anujsaxenadev.audiorecorder.audio_list.models.AudioFile
 import com.wordpress.anujsaxenadev.audiorecorder.core.navigation.NavigationScreen
-import com.wordpress.anujsaxenadev.ui.components.DSImage
-import com.wordpress.anujsaxenadev.ui.components.ImageType
+import com.wordpress.anujsaxenadev.ui.components.image.DSImage
+import com.wordpress.anujsaxenadev.ui.components.image.ImageType
 import com.wordpress.anujsaxenadev.ui.theme.DSGrey
 import com.wordpress.anujsaxenadev.ui.theme.DSWhite
 import com.wordpress.anujsaxenadev.ui.theme.Dimen_24adp

@@ -1,4 +1,4 @@
-package com.wordpress.anujsaxenadev.ui.components
+package com.wordpress.anujsaxenadev.ui.components.image
 
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ColorFilter

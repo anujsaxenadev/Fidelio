@@ -7,8 +7,8 @@ import androidx.compose.material.icons.filled.SkipPrevious
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ColorFilter
-import com.wordpress.anujsaxenadev.ui.components.DSImage
-import com.wordpress.anujsaxenadev.ui.components.ImageType
+import com.wordpress.anujsaxenadev.ui.components.image.DSImage
+import com.wordpress.anujsaxenadev.ui.components.image.ImageType
 import com.wordpress.anujsaxenadev.ui.theme.DSWhite
 
 @Composable
