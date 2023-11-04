@@ -9,7 +9,6 @@ import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.wordpress.anujsaxenadev.audiorecorder.R
-import com.wordpress.anujsaxenadev.audiorecorder.core.components.AnimatedImageView
 import com.wordpress.anujsaxenadev.audiorecorder.core.components.GenericAudioPlayerView
 import com.wordpress.anujsaxenadev.audiorecorder.core.components.GenericAudioPlayerViewType
 import com.wordpress.anujsaxenadev.audiorecorder.core.components.GradientBackgroundComponent
@@ -17,6 +16,8 @@ import com.wordpress.anujsaxenadev.audiorecorder.core.components.play_pause_comp
 import com.wordpress.anujsaxenadev.audiorecorder.core.components.play_pause_component.PlayerControlsListener
 import com.wordpress.anujsaxenadev.audiorecorder.core.components.play_pause_component.PlayerControlsType
 import com.wordpress.anujsaxenadev.audiorecorder.player.viewmodel.AudioPlayerViewModel
+import com.wordpress.anujsaxenadev.ui.components.image.DSImage
+import com.wordpress.anujsaxenadev.ui.components.image.ImageType
 
 @Composable
 fun AudioPlayerScreen(navController: NavController){
@@ -25,12 +26,15 @@ fun AudioPlayerScreen(navController: NavController){
     when (val duration = viewModel.durationFlow.collectAsState().value) {
         -1 -> {
             GradientBackgroundComponent {
-                AnimatedImageView.AnimatedImage(
-                    id = R.raw.loader,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .align(Alignment.Center)
-                        .aspectRatio(1f))
+                DSImage(
+                    ImageType.AnimatedJson(
+                        id = R.raw.loader,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .align(Alignment.Center)
+                            .aspectRatio(1f)
+                    )
+                )
             }
         }
         0 -> {

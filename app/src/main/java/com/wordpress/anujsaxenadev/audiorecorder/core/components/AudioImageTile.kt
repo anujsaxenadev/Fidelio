@@ -47,9 +47,12 @@ fun AudioImageTile(
                 .clip(shape)
             when(audioImageTileType){
                 AudioImageTileType.AnimatedImageJSON -> {
-                    AnimatedImageView.AnimatedImage(
-                        id = id,
-                        modifier = modifier)
+                    DSImage(
+                        ImageType.AnimatedJson(
+                            id = id,
+                            modifier = modifier
+                        )
+                    )
                 }
                 AudioImageTileType.LocalImage -> {
                     DSImage(

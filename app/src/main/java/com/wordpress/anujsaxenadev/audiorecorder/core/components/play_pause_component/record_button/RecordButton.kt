@@ -9,8 +9,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import com.wordpress.anujsaxenadev.audiorecorder.R
-import com.wordpress.anujsaxenadev.audiorecorder.core.components.AnimatedImageView
-import com.wordpress.anujsaxenadev.audiorecorder.core.components.AnimationIteration
+import com.wordpress.anujsaxenadev.ui.components.image.DSImage
+import com.wordpress.anujsaxenadev.ui.components.image.ImageType
+import com.wordpress.anujsaxenadev.ui.components.image.builders.AnimationIteration
 
 @Composable
 fun RecordButton(
@@ -21,24 +22,28 @@ fun RecordButton(
 
     when (buttonState) {
         RecordButtonState.OnStop.stateValue -> {
-            AnimatedImageView.AnimatedImage(
-                id = R.raw.record_button,
-                iterations = AnimationIteration.OneTime,
-                isPlaying = false,
-                modifier = modifier.clickable {
-                    buttonState = RecordButtonState.OnRecord.stateValue
-                    playButtonInteractionListener.onRecord()
-                }.aspectRatio(aspectRatio)
+            DSImage(
+                ImageType.AnimatedJson(
+                    id = R.raw.record_button,
+                    iterations = AnimationIteration.OneTime,
+                    isPlaying = false,
+                    modifier = modifier.clickable {
+                        buttonState = RecordButtonState.OnRecord.stateValue
+                        playButtonInteractionListener.onRecord()
+                    }.aspectRatio(aspectRatio)
+                )
             )
         }
 
         RecordButtonState.OnRecord.stateValue -> {
-            AnimatedImageView.AnimatedImage(
-                id = R.raw.record_button,
-                modifier = modifier.clickable {
-                    buttonState = RecordButtonState.OnStop.stateValue
-                    playButtonInteractionListener.onStop()
-                }.aspectRatio(aspectRatio)
+            DSImage(
+                ImageType.AnimatedJson(
+                    id = R.raw.record_button,
+                    modifier = modifier.clickable {
+                        buttonState = RecordButtonState.OnStop.stateValue
+                        playButtonInteractionListener.onStop()
+                    }.aspectRatio(aspectRatio)
+                )
             )
         }
     }

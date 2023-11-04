@@ -6,6 +6,7 @@ import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
@@ -15,8 +16,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 import com.wordpress.anujsaxenadev.audiorecorder.R
-import com.wordpress.anujsaxenadev.audiorecorder.core.components.AnimatedImageView
 import com.wordpress.anujsaxenadev.audiorecorder.core.navigation.NavigationScreen
+import com.wordpress.anujsaxenadev.ui.components.image.DSImage
+import com.wordpress.anujsaxenadev.ui.components.image.ImageType
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -34,11 +36,13 @@ fun SplashScreen(navController: NavController){
             modifier = Modifier
                 .fillMaxHeight()
                 .fillMaxWidth()){
-            AnimatedImageView.AnimatedImage(
+            DSImage(ImageType.AnimatedJson(
                 id = R.raw.splash_animation,
                 progress = {
                     progress.value
-                })
+                },
+                modifier = Modifier.aspectRatio(1f)
+            ))
 
             LaunchedEffect(progress) {
                 withContext(Dispatchers.Unconfined) {

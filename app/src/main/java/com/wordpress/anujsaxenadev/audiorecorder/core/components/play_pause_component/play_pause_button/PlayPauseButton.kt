@@ -13,7 +13,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import com.wordpress.anujsaxenadev.audiorecorder.R
-import com.wordpress.anujsaxenadev.audiorecorder.core.components.AnimatedImageView
+import com.wordpress.anujsaxenadev.ui.components.image.DSImage
+import com.wordpress.anujsaxenadev.ui.components.image.ImageType
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -33,22 +34,25 @@ fun PlayPauseButton(
     val progress = remember { Animatable(initialValue) }
     var buttonState by remember { mutableStateOf(PlayPauseButtonState.OnPause.stateValue) }
 
-    AnimatedImageView.AnimatedImage(
-        id = R.raw.play_pause,
-        progress = {
-            progress.value
-        },
-        modifier = modifier
-            .clickable {
-                buttonState = if(buttonState == PlayPauseButtonState.OnResume.stateValue || buttonState == PlayPauseButtonState.OnInitCompleted.stateValue){
-                    playButtonInteractionListener.onPause()
-                    PlayPauseButtonState.OnPause.stateValue
-                } else {
-                    playButtonInteractionListener.onResume()
-                    PlayPauseButtonState.OnResume.stateValue
+    DSImage(
+        ImageType.AnimatedJson(
+            id = R.raw.play_pause,
+            progress = {
+                progress.value
+            },
+            modifier = modifier
+                .clickable {
+                    buttonState = if(buttonState == PlayPauseButtonState.OnResume.stateValue || buttonState == PlayPauseButtonState.OnInitCompleted.stateValue){
+                        playButtonInteractionListener.onPause()
+                        PlayPauseButtonState.OnPause.stateValue
+                    } else {
+                        playButtonInteractionListener.onResume()
+                        PlayPauseButtonState.OnResume.stateValue
+                    }
                 }
-            }
-            .aspectRatio(aspectRatio))
+                .aspectRatio(aspectRatio)
+        )
+    )
 
     if(buttonState != PlayPauseButtonState.OnPause.stateValue) {
         if (progress.value < initCompleted) {

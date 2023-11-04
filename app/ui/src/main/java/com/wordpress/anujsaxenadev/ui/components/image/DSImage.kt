@@ -1,6 +1,7 @@
 package com.wordpress.anujsaxenadev.ui.components.image
 
 import androidx.compose.runtime.Composable
+import com.wordpress.anujsaxenadev.ui.components.image.builders.AnimatedJsonBuilder
 import com.wordpress.anujsaxenadev.ui.components.image.builders.ResourceBuilder
 import com.wordpress.anujsaxenadev.ui.components.image.builders.VectorBuilder
 
@@ -12,6 +13,9 @@ fun DSImage(imageType: ImageType) {
         }
         is ImageType.Vector -> {
             VectorBuilder().build(imageType = imageType)
+        }
+        is ImageType.AnimatedJson -> {
+            AnimatedJsonBuilder().build(imageType = imageType)
         }
     }
 }
