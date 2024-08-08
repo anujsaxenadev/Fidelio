@@ -1,8 +1,18 @@
 package com.wordpress.anujsaxenadev.audiorecorder.core.navigation
 
-sealed class NavigationScreen(val route: String) {
-    object MainScreen: NavigationScreen("MainScreen")
-    object AudioPlayerScreen: NavigationScreen("AudioPlayerScreen")
-    object AudioRecordingScreen: NavigationScreen("AudioRecordingScreen")
-    object AudioListScreen: NavigationScreen("AudioListScreen")
+import kotlinx.serialization.Serializable
+
+sealed interface NavigationScreen {
+
+    @Serializable
+    data object MainScreen: NavigationScreen
+
+    @Serializable
+    data class AudioPlayerScreen(val fileName: String): NavigationScreen
+
+    @Serializable
+    data object AudioRecordingScreen: NavigationScreen
+
+    @Serializable
+    data object AudioListScreen: NavigationScreen
 }

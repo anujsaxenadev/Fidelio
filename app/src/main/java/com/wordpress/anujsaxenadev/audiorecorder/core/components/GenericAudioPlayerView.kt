@@ -54,7 +54,7 @@ inline fun GenericAudioPlayerView(
                                 modifier = Modifier
                                     .padding(Dimen_10adp)
                                     .clickable {
-                                        navController.navigate(NavigationScreen.AudioListScreen.route)
+                                        navController.navigate(NavigationScreen.AudioListScreen)
                                     },
                                 colorFilter = ColorFilter.tint(DSWhite)
                             )

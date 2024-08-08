@@ -1,6 +1,5 @@
 package com.wordpress.anujsaxenadev.audiorecorder.player.viewmodel
 
-import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.wordpress.anujsaxenadev.audiorecorder.player.repository.AudioPlayerRepository
@@ -13,22 +12,13 @@ import javax.inject.Inject
 
 @HiltViewModel
 class AudioPlayerViewModel @Inject constructor(
-    private val repository: AudioPlayerRepository,
-    savedStateHandle: SavedStateHandle,
+    private val repository: AudioPlayerRepository
 ) : ViewModel(){
 
-    companion object{
-        const val FILE_NAME_ID = "fileName"
-    }
-    private val fileName: String = checkNotNull(savedStateHandle[FILE_NAME_ID])
     private val _durationFlow: MutableStateFlow<Int> = MutableStateFlow(-1)
     var durationFlow = _durationFlow.asStateFlow()
 
-    init {
-        getDuration()
-    }
-
-    private fun getDuration(){
+    fun getDuration(fileName: String){
         viewModelScope.launch(Dispatchers.IO) {
             val metaData = repository.initPlayer(fileName)
             _durationFlow.value = metaData.duration

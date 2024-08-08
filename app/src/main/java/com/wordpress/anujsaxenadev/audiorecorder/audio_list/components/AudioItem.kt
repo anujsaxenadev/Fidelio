@@ -39,7 +39,7 @@ fun AudioItem (navController: NavController, audio: AudioFile){
             .fillMaxWidth()
             .padding(Dimen_4adp)
             .clickable {
-                navController.navigate(NavigationScreen.AudioPlayerScreen.route + "/${audio.fileName}")
+                navController.navigate(NavigationScreen.AudioPlayerScreen(audio.fileName))
             }
     ) {
         

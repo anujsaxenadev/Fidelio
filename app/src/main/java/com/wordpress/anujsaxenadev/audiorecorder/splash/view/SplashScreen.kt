@@ -51,7 +51,7 @@ fun SplashScreen(navController: NavController){
                         animationSpec = tween(durationMillis = 3500, easing = LinearEasing)
                     ) {
                         if (this.value == 1f) {
-                            navController.navigate(NavigationScreen.AudioRecordingScreen.route)
+                            navController.navigate(NavigationScreen.AudioRecordingScreen)
                         }
                     }
                 }

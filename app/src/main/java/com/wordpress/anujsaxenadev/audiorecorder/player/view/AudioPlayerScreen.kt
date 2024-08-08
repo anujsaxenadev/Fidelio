@@ -20,8 +20,9 @@ import com.wordpress.anujsaxenadev.ui.components.image.DSImage
 import com.wordpress.anujsaxenadev.ui.components.image.ImageType
 
 @Composable
-fun AudioPlayerScreen(navController: NavController){
+fun AudioPlayerScreen(navController: NavController, fileName: String){
     val viewModel: AudioPlayerViewModel = hiltViewModel()
+    viewModel.getDuration(fileName)
 
     when (val duration = viewModel.durationFlow.collectAsState().value) {
         -1 -> {
