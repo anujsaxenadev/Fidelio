@@ -35,8 +35,8 @@ android {
 
 dependencies {
     // Hilt
-    implementation("com.google.dagger:hilt-android:2.48")
-    ksp("com.google.dagger:hilt-compiler:2.48")
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
 
     // Logger
     implementation(project(":app:logger"))
