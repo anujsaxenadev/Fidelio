@@ -54,31 +54,31 @@ dependencies {
 
     // Core
     implementation(libs.androidx.core.ktx)
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
-    implementation("androidx.activity:activity-compose:1.8.0")
-    implementation(platform("androidx.compose:compose-bom:2023.03.00"))
-    implementation("androidx.compose.ui:ui")
-    implementation("androidx.compose.ui:ui-graphics")
-    implementation("androidx.compose.ui:ui-tooling-preview")
-    implementation("androidx.compose.material3:material3")
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.activity.compose)
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.compose.ui)
+    implementation(libs.androidx.compose.ui.graphics)
+    implementation(libs.androidx.compose.ui.tooling.preview)
+    implementation(libs.androidx.compose.material3)
 
     // Hilt
-    implementation("com.google.dagger:hilt-android:2.48.1")
-    ksp("com.google.dagger:hilt-compiler:2.48")
-    implementation("androidx.hilt:hilt-navigation-compose:1.1.0")
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
+    implementation(libs.hilt.navigation.compose)
 
     // Navigation
-    implementation("androidx.navigation:navigation-compose:2.8.0-alpha08")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.kotlinx.serialization.json)
 
     // Neumorphic Design
-    implementation("io.github.sridhar-sp:neumorphic:0.0.6")
+    implementation(libs.neumorphic)
 
     // Icons
-    implementation("androidx.compose.material:material-icons-extended:1.6.0-alpha08")
+    implementation(libs.material.icons.extended)
 
     // Fonts
-    implementation("androidx.compose.ui:ui-text-google-fonts:1.5.4")
+    implementation(libs.ui.text.google.fonts)
 
     implementation(project(":app:logger"))
     implementation(project(":app:file_manager"))
