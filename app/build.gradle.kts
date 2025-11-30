@@ -71,9 +71,6 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
     implementation(libs.kotlinx.serialization.json)
 
-    // Neumorphic Design
-    implementation(libs.neumorphic)
-
     // Icons
     implementation(libs.material.icons.extended)
 
