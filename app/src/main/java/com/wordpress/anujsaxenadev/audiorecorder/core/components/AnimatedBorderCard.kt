@@ -1,4 +1,4 @@
-package com.wordpress.anujsaxenadev.audiorecorder.audio_list.components
+package com.wordpress.anujsaxenadev.audiorecorder.core.components
 
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.RepeatMode

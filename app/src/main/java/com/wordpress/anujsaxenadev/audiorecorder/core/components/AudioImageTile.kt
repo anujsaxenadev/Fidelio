@@ -8,7 +8,6 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import com.wordpress.anujsaxenadev.audiorecorder.audio_list.components.AnimatedBorderCard
 import com.wordpress.anujsaxenadev.ui.components.image.DSImage
 import com.wordpress.anujsaxenadev.ui.components.image.ImageType
 import com.wordpress.anujsaxenadev.ui.theme.DSWhite
