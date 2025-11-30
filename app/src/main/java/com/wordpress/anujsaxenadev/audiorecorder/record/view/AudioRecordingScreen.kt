@@ -1,7 +1,7 @@
 package com.wordpress.anujsaxenadev.audiorecorder.record.view
 
 import androidx.compose.runtime.Composable
-import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.wordpress.anujsaxenadev.audiorecorder.core.components.GenericAudioPlayerView
 import com.wordpress.anujsaxenadev.audiorecorder.core.components.GenericAudioPlayerViewType
